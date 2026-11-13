@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="macaron">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>统计 · 轻记账</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="page-app" data-page="stats">
+  <div class="app-shell">
+    <div id="sidebar"></div>
+
+    <div class="app-body">
+      <header class="appbar">
+        <div class="appbar__title">
+          <h1>统计</h1>
+          <p class="appbar__sub">收支结构与变化趋势</p>
+        </div>
+        <div class="appbar__actions">
+          <span class="sync-chip" data-sync-chip hidden></span>
+          <a class="avatar" id="appbarAvatar" href="settings.html" aria-label="账号与设置">L</a>
+        </div>
+      </header>
+
+      <main class="app-content">
+        <section class="rangebar" aria-label="统计范围">
+          <div class="segmented segmented--sm" id="rangeModes">
+            <button class="segmented__item is-active" type="button" data-mode="month">按月</button>
+            <button class="segmented__item" type="button" data-mode="year">按年</button>
+            <button class="segmented__item" type="button" data-mode="custom">自定义</button>
+          </div>
+          <div class="monthbar__spacer"></div>
+          <button class="btn btn--soft btn--sm" id="backToCurrent" type="button">回到本月</button>
+        </section>
+
+        <section class="monthbar" aria-label="范围切换">
+          <button class="icon-btn" id="prevRange" type="button" aria-label="上一段">
+            <span class="material-symbols-rounded">chevron_left</span>
+          </button>
+          <span class="monthbar__label num" id="rangeText">本月</span>
+          <button class="icon-btn" id="nextRange" type="button" aria-label="下一段">
+            <span class="material-symbols-rounded">chevron_right</span>
+          </button>
+        </section>
+
+        <section class="custom-range" id="customRange" aria-label="自定义区间" hidden>
+          <input class="input" type="date" id="rangeStart" aria-label="开始日期">
+          <span class="custom-range__sep">至</span>
+          <input class="input" type="date" id="rangeEnd" aria-label="结束日期">
+          <button class="btn btn--primary btn--sm" id="applyRange" type="button">应用</button>
+        </section>
+
+        <section class="stat-grid" aria-label="月度关键指标">
+          <article class="stat-tile stat-tile--hero">
+            <span class="stat-tile__label">结余</span>
+            <strong class="stat-tile__value num" id="statBalance">¥0.00</strong>
+            <span class="stat-tile__foot" id="statBalanceRate">—</span>
+          </article>
+          <article class="stat-tile">
+            <span class="stat-tile__label">收入</span>
+            <strong class="stat-tile__value num amount-income" id="statIncome">¥0.00</strong>
+            <span class="stat-tile__foot" id="statIncomeMom">—</span>
+          </article>
+          <article class="stat-tile">
+            <span class="stat-tile__label">支出</span>
+            <strong class="stat-tile__value num" id="statExpense">¥0.00</strong>
+            <span class="stat-tile__foot" id="statExpenseMom">—</span>
+          </article>
+          <article class="stat-tile">
+            <span class="stat-tile__label">日均支出</span>
+            <strong class="stat-tile__value num" id="statAvg">¥0.00</strong>
+            <span class="stat-tile__foot" id="statDays">—</span>
+          </article>
+          <article class="stat-tile">
+            <span class="stat-tile__label">记录笔数</span>
+            <strong class="stat-tile__value num" id="statCount">0</strong>
+            <span class="stat-tile__foot">含收入与支出</span>
+          </article>
+        </section>
+
+        <section class="card" aria-label="分类构成">
+          <div class="card__head">
+            <h2>分类构成</h2>
+            <div class="segmented segmented--sm" id="breakdownTabs">
+              <button class="segmented__item is-active" type="button" data-type="expense">支出</button>
+              <button class="segmented__item" type="button" data-type="income">收入</button>
+            </div>
+          </div>
+          <div class="breakdown-list" id="breakdownList"></div>
+        </section>
+
+        <section class="card" style="margin-top: 16px" aria-label="环比上月">
+          <div class="card__head">
+            <h2 id="momTitle">环比上月</h2>
+            <span class="card__hint" id="momHint">—</span>
+          </div>
+          <div class="mom-grid">
+            <div class="mom-item">
+              <span class="mom-item__label">支出变化</span>
+              <span class="mom-item__value num" id="momExpense">—</span>
+            </div>
+            <div class="mom-item">
+              <span class="mom-item__label">收入变化</span>
+              <span class="mom-item__value num" id="momIncome">—</span>
+            </div>
+            <div class="mom-item">
+              <span class="mom-item__label">结余变化</span>
+              <span class="mom-item__value num" id="momBalance">—</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top: 16px" aria-label="近六个月趋势">
+          <div class="card__head">
+            <h2 id="trendTitle">近 6 个月趋势</h2>
+            <div class="legend">
+              <span class="legend__dot" style="background: var(--brand)"></span>支出
+              <span class="legend__dot" style="background: var(--color-income)"></span>收入
+            </div>
+          </div>
+          <div class="trend" id="trendChart"></div>
+          <p class="card__hint" style="margin-top: 8px">点击某个月份可切换查看该月统计。</p>
+        </section>
+
+        <p class="ledger-footnote">
+          <span class="material-symbols-rounded">info</span>
+          统计口径：以发生日期归属所选区间，结余 = 收入 − 支出
+        </p>
+      </main>
+    </div>
+
+    <div id="tabbar"></div>
+  </div>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/store.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/stats.js"></script>
+</body>
+</html>

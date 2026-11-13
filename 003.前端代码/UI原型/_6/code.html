@@ -1,0 +1,833 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-variant":"#e7dff5","on-secondary-fixed-variant":"#4b2fa5","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","on-tertiary-fixed":"#002118","outline-variant":"#cac4d6","surface-container":"#f3eaff","on-primary":"#ffffff","surface-bright":"#fdf7ff","surface":"#fdf7ff","error":"#ba1a1a","outline":"#797585","tertiary-container":"#44806d","inverse-on-surface":"#f5eeff","surface-container-high":"#ede4fb","on-background":"#1d1929","tertiary-fixed":"#b1efd8","tertiary-fixed-dim":"#96d3bd","inverse-primary":"#cbbeff","on-tertiary-container":"#f9fffa","on-surface-variant":"#484553","on-surface":"#1d1929","on-error-container":"#93000a","surface-tint":"#6347c7","primary-fixed":"#e7deff","secondary-fixed-dim":"#ccbeff","on-secondary-container":"#350e8f","on-primary-container":"#fffcff","on-secondary-fixed":"#1e0060","on-tertiary":"#ffffff","on-primary-fixed-variant":"#4b2aae","surface-dim":"#dfd6ed","primary-fixed-dim":"#cbbeff","on-tertiary-fixed-variant":"#0d503f","on-primary-fixed":"#1e0061","tertiary":"#2a6755","primary":"#6144c5","secondary":"#644abe","surface-container-low":"#f8f1ff","secondary-fixed":"#e7deff","background":"#fdf7ff","secondary-container":"#9f86fe","error-container":"#ffdad6","inverse-surface":"#322e3f","on-error":"#ffffff","surface-container-highest":"#e7dff5","primary-container":"#7a5fe0"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter":"1.5rem","gutter-sm":"1rem","space-sm":"0.5rem","space-md":"1rem","space-lg":"1.5rem",margin:"2rem","margin-mobile":"1rem","space-xs":"0.25rem","space-xl":"2rem"},fontFamily:{"headline-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"]},fontSize:{"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"600"}],"display-lg-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(122,95,224,0.05)] z-50 flex flex-col justify-between py-margin"><div class="flex flex-col gap-space-xl px-space-lg"><div class="flex items-center gap-space-sm px-space-xs"><img alt="记账本 Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wu5og5Pm7WlwcQ-hRmkFtNfsYKUYMyuy78M2j-tFq-0ccZsNmYDeo5XvDTbjaleltbqcnwpCL3fy4qpzLjcZeg_glSm8zPXzQji1LqNnCczjXId8-Xdb_j4psd_xZpCzSHDo0wfX8pRze2Thiy9dWTmiMYwTVbbRgka1dogsXBtjoR8drvVwlIrTAMqWm2NayjT1q28iXh1upBr5n_2GZY0eTZ7NiS9d5F9Dc-Xdr7"><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">记账本</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-fixed text-on-primary-fixed-variant font-label-lg text-label-lg shadow-[0_2px_8px_rgba(122,95,224,0.12)]"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="">首页概览</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl transition-all bg-primary-fixed text-on-primary-fixed-variant font-label-lg text-label-lg shadow-[0_2px_8px_rgba(122,95,224,0.12)]" data-path="records" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="">收支流水</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="stats" href="#"><span class="material-symbols-outlined text-[20px]">donut_large</span><span class="">统计报表</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="">偏好设置</span></a></nav></div><div class="px-space-lg"><div class="p-space-md bg-surface-container rounded-xl flex items-center justify-between"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">记账周期</span><span class="font-label-md text-label-md text-primary font-semibold">本月进行中</span></div><span class="material-symbols-outlined text-primary text-[22px]">calendar_month</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(122,95,224,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm bg-surface-container px-space-md py-space-xs rounded-full shadow-[0_2px_6px_-1px_rgba(34,30,46,0.02)]"><span class="material-symbols-outlined text-primary text-[18px]">schedule</span><span class="font-label-md text-label-md text-on-surface-variant">今日 • 5月18日 星期日</span></div></div><div class="flex items-center gap-space-lg"><button class="flex items-center gap-space-sm bg-primary-container hover:bg-primary text-on-primary-container px-space-lg py-space-xs rounded-full shadow-[0_4px_14px_rgba(122,95,224,0.30)] hover:shadow-[0_6px_20px_rgba(122,95,224,0.40)] active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span class="font-label-lg text-label-lg font-semibold">记一笔</span><kbd class="bg-on-primary-container/20 text-on-primary-container px-space-xs py-[1px] rounded font-label-sm text-label-sm">N</kbd></button><div class="flex items-center gap-space-sm"><div class="flex flex-col items-end"><span class="font-label-md text-label-md text-on-surface font-semibold">家庭理财小账本</span><span class="font-label-sm text-label-sm text-tertiary font-medium">个人云同步</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_2px_8px_rgba(122,95,224,0.15)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-0kRIdU0MrE-B45cTIESiCyexPugSjjN-_TiZEE-rpHBYnnFdn1zmUMkuTDgS8UlThJtbtaO5iOqfbPHGx26tfTkKYx4o79B6LgRKGgLMq8Dlq6qoDIY5MudZYtwwk7GMSCrWYTZqPZ06gQXzmiHl_Q-hJi1mN2JiWF9aOrmFIMdNoLw0cpm18X6SdU7S3AeUh8yiwff48q2LBM9EidenXT8qQqcy7zkNLvOztEI"></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-margin pb-margin"><div class="flex flex-col w-full">
+<!-- 顶部统计概览与标题栏 (Asymmetric Bento Flow) -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-xl">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">TRANSACTION LEDGER</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">收支流水明细</h1>
+<p class="font-body-md text-text-on-surface-variant text-on-surface-variant">
+        共 <span class="font-semibold text-on-surface">128</span> 笔记录 · 本月支出合计 <span class="font-semibold text-error">¥4,280.00</span>，收入合计 <span class="font-semibold text-tertiary">¥12,500.00</span>
+</p>
+</div>
+<!-- 顶部动作条：导出备份与汇总胶囊 -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-xl shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">结余</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">+¥8,220.00</span>
+</div>
+<button class="flex items-center gap-space-xs bg-surface-container-lowest hover:bg-surface-container text-on-surface px-space-md py-space-xs rounded-xl shadow-sm transition-all active:scale-95" id="exportCsvBtn" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+<span class="font-label-md text-label-md">导出 CSV</span>
+</button>
+<button class="flex items-center gap-space-xs bg-surface-container-lowest hover:bg-surface-container text-on-surface px-space-md py-space-xs rounded-xl shadow-sm transition-all active:scale-95" id="exportJsonBtn" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">data_object</span>
+<span class="font-label-md text-label-md">JSON 备份</span>
+</button>
+</div>
+</div>
+<!-- 多维检索与筛选控制面板 (Macaron Soft Console) -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col gap-space-lg mb-space-xl">
+<!-- 第一行：搜索框 + 发生时间范围分段 + 排序 -->
+<div class="flex flex-col lg:flex-row gap-space-md items-stretch lg:items-center justify-between">
+<!-- 关键词搜索框 -->
+<div class="relative flex-1 max-w-xl">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-11 pr-space-md py-space-sm bg-surface-container-low rounded-xl text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:shadow-md transition-all outline-none" id="searchInput" placeholder="搜索备注、商户、分类或标签 (例如: 星巴克, #报销, 地铁)..." type="text">
+</div>
+<!-- 时间跨度分段选择器 (Segmented Pills) -->
+<div class="flex items-center flex-wrap gap-space-sm pt-space-xs"><!-- 记录行 1: 星巴克 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">coffee</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">星巴克燕麦拿铁</span>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-space-xs py-[2px] rounded-md flex-shrink-0">餐饮 · 咖啡</span>
+<span class="font-label-sm text-label-sm bg-surface-container text-primary font-medium px-space-xs py-[2px] rounded-md flex-shrink-0">#报销</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">14:15</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">credit_card</span>招商卡</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥35.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-space-lg"></div>
+<!-- 记录行 2: 员工牛肉饭 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">lunch_dining</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">员工套餐牛肉饭</span>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-space-xs py-[2px] rounded-md flex-shrink-0">餐饮 · 午餐</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">12:30</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">payments</span>微信支付</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥48.50
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-space-lg"></div>
+<!-- 记录行 3: 2号线通勤 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">directions_subway</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">2号线通勤</span>
+<span class="font-label-sm text-label-sm bg-surface-variant text-on-surface-variant px-space-xs py-[2px] rounded-md flex-shrink-0">交通 · 地铁</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">08:40</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">contactless</span>交通卡</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥6.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div></div>
+<!-- 排序下拉 / 切换 -->
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-xs rounded-xl self-start lg:self-auto">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">swap_vert</span>
+<select class="bg-transparent font-label-md text-label-md text-on-surface outline-none cursor-pointer" id="sortSelect">
+<option value="time-desc">时间倒序 (最新在前)</option>
+<option value="time-asc">时间正序</option>
+<option value="amount-desc">金额从大到小</option>
+<option value="amount-asc">金额从小到大</option>
+</select>
+</div>
+</div>
+<!-- 第二行：收支类型 + 分类下拉/Chip + 标签过滤 Chips -->
+<div class="flex flex-col gap-space-md pt-space-xs">
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- 收支类型 Segment -->
+<div class="flex items-center p-1 bg-surface-container-low rounded-xl gap-1">
+<button class="type-filter active px-space-md py-space-xs rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary font-bold shadow-sm" type="button">全部</button>
+<button class="type-filter px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface" type="button">支出</button>
+<button class="type-filter px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface" type="button">收入</button>
+</div>
+<div class="h-5 w-px bg-surface-variant hidden md:block"></div>
+<!-- 常用分类快速单选/多选 Chips -->
+<div class="flex items-center flex-wrap gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-1">分类:</span>
+<button class="cat-chip px-space-sm py-[4px] rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface hover:bg-surface-variant transition-all" type="button">全部</button>
+<button class="cat-chip px-space-sm py-[4px] rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface hover:bg-surface-variant transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">restaurant</span>餐饮
+          </button>
+<button class="cat-chip px-space-sm py-[4px] rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface hover:bg-surface-variant transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">directions_subway</span>交通
+          </button>
+<button class="cat-chip px-space-sm py-[4px] rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface hover:bg-surface-variant transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">theater_comedy</span>娱乐
+          </button>
+<button class="cat-chip px-space-sm py-[4px] rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface hover:bg-surface-variant transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">home</span>居家
+          </button>
+<button class="cat-chip px-space-sm py-[4px] rounded-full font-label-sm text-label-sm bg-surface-container-low text-on-surface hover:bg-surface-variant transition-all flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px] text-tertiary">payments</span>薪资收入
+          </button>
+</div>
+</div>
+<!-- 标签快速过滤 Chip 组 -->
+<div class="flex items-center flex-wrap gap-space-sm pt-space-xs"><!-- 记录行 1: IMAX电影票 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">movie</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">IMAX电影票</span>
+<span class="font-label-sm text-label-sm bg-surface-variant text-on-surface-variant px-space-xs py-[2px] rounded-md flex-shrink-0">娱乐 · 电影</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">20:10</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">account_balance_wallet</span>支付宝</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥85.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-space-lg"></div>
+<!-- 记录行 2: 火锅聚餐 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">soup_kitchen</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">火锅聚餐</span>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-space-xs py-[2px] rounded-md flex-shrink-0">餐饮 · 晚餐</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant font-medium px-space-xs py-[2px] rounded-md flex-shrink-0">#聚会</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">19:00</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">payments</span>微信支付</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥175.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<!-- 结构化流水列表区 -->
+<div class="flex flex-col gap-space-lg">
+<!-- 分组 1: 2026年11月4日（今天） -->
+<div class="flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden transition-all hover:shadow-md">
+<!-- 日期组 Header -->
+<div class="flex items-center justify-between px-space-lg py-space-md bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">2026年11月4日</span>
+<span class="font-label-md text-label-md bg-primary-fixed text-on-primary-fixed-variant px-space-xs py-[1px] rounded-md font-semibold">今天</span>
+</div>
+<div class="flex items-center gap-space-md font-label-md text-label-md">
+<span class="text-on-surface-variant">支出: <strong class="text-error font-semibold">¥138.50</strong></span>
+<span class="text-on-surface-variant">收入: <strong class="text-on-surface font-semibold">¥0.00</strong></span>
+</div>
+</div>
+<!-- 记录列表 items -->
+<div class="flex flex-col"><!-- 记录行 1: 星巴克 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">coffee</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">星巴克燕麦拿铁</span>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-space-xs py-[2px] rounded-md flex-shrink-0">餐饮 · 咖啡</span>
+<span class="font-label-sm text-label-sm bg-surface-container text-primary font-medium px-space-xs py-[2px] rounded-md flex-shrink-0">#报销</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">14:15</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">credit_card</span>招商卡</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥35.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-space-lg"></div>
+<!-- 记录行 2: 员工牛肉饭 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">lunch_dining</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">员工套餐牛肉饭</span>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-space-xs py-[2px] rounded-md flex-shrink-0">餐饮 · 午餐</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">12:30</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">payments</span>微信支付</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥48.50
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-space-lg"></div>
+<!-- 记录行 3: 2号线通勤 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">directions_subway</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">2号线通勤</span>
+<span class="font-label-sm text-label-sm bg-surface-variant text-on-surface-variant px-space-xs py-[2px] rounded-md flex-shrink-0">交通 · 地铁</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">08:40</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">contactless</span>交通卡</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥6.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div></div>
+</div>
+<!-- 分组 2: 2026年11月3日（昨天） -->
+<div class="flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden transition-all hover:shadow-md">
+<!-- 日期组 Header -->
+<div class="flex items-center justify-between px-space-lg py-space-md bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">2026年11月3日</span>
+<span class="font-label-md text-label-md bg-surface-container text-on-surface-variant px-space-xs py-[1px] rounded-md">昨天</span>
+</div>
+<div class="flex items-center gap-space-md font-label-md text-label-md">
+<span class="text-on-surface-variant">支出: <strong class="text-error font-semibold">¥260.00</strong></span>
+<span class="text-on-surface-variant">收入: <strong class="text-on-surface font-semibold">¥0.00</strong></span>
+</div>
+</div>
+<!-- 记录列表 items -->
+<div class="flex flex-col"><!-- 记录行 1: IMAX电影票 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">movie</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">IMAX电影票</span>
+<span class="font-label-sm text-label-sm bg-surface-variant text-on-surface-variant px-space-xs py-[2px] rounded-md flex-shrink-0">娱乐 · 电影</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">20:10</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">account_balance_wallet</span>支付宝</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥85.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-space-lg"></div>
+<!-- 记录行 2: 火锅聚餐 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">soup_kitchen</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">火锅聚餐</span>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-space-xs py-[2px] rounded-md flex-shrink-0">餐饮 · 晚餐</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant font-medium px-space-xs py-[2px] rounded-md flex-shrink-0">#聚会</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">19:00</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">payments</span>微信支付</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥175.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div></div>
+</div>
+<!-- 分组 3: 2026年11月1日（周日） -->
+<div class="flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden transition-all hover:shadow-md">
+<!-- 日期组 Header -->
+<div class="flex items-center justify-between px-space-lg py-space-md bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary"></div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">2026年11月1日</span>
+<span class="font-label-md text-label-md bg-surface-container text-on-surface-variant px-space-xs py-[1px] rounded-md">周日</span>
+</div>
+<div class="flex items-center gap-space-md font-label-md text-label-md">
+<span class="text-on-surface-variant">支出: <strong class="text-error font-semibold">¥1,200.00</strong></span>
+<span class="text-on-surface-variant">收入: <strong class="text-tertiary font-semibold">¥12,500.00</strong></span>
+</div>
+</div>
+<!-- 记录列表 items -->
+<div class="flex flex-col"><!-- 记录行 1: 工资收入（薄荷绿高亮） -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md bg-tertiary-fixed/15 hover:bg-tertiary-fixed/25 transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center font-bold group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">attach_money</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">10月工资薪酬打卡</span>
+<span class="font-label-sm text-label-sm bg-tertiary text-on-tertiary font-semibold px-space-xs py-[2px] rounded-md flex-shrink-0">收入 · 工资</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant font-medium px-space-xs py-[2px] rounded-md flex-shrink-0">#生活必要</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">10:00</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">account_balance</span>工商银行</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-tertiary tracking-tight text-right flex-shrink-0">
++¥12,500.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-space-lg"></div>
+<!-- 记录行 2: 物业与水电气 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">11月物业与水电气</span>
+<span class="font-label-sm text-label-sm bg-surface-variant text-on-surface-variant px-space-xs py-[2px] rounded-md flex-shrink-0">居家 · 物业</span>
+<span class="font-label-sm text-label-sm bg-surface-container text-primary font-medium px-space-xs py-[2px] rounded-md flex-shrink-0">#生活必要</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">11:30</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">payments</span>微信支付</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥1,200.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div></div>
+</div>
+<!-- 底部滚动加载指示与状态提示 -->
+<div class="flex flex-col items-center justify-center py-space-xl gap-space-xs text-on-surface-variant">
+<div class="flex items-center gap-space-sm text-primary">
+<span class="material-symbols-outlined animate-spin text-[20px]">sync</span>
+<span class="font-label-md text-label-md font-medium">已加载 50 条记录，向下滚动继续加载更多</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">全部 128 条数据已完成云端实时同步</span>
+</div>
+</div>
+<!-- 内置快速编辑侧滑抽屉 (Quick Edit Drawer Preview) -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none flex justify-end" id="drawerOverlay">
+<div class="w-full max-w-md h-full bg-surface-container-lowest shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out" id="drawerPanel">
+<!-- 抽屉头部 -->
+<div class="flex items-center justify-between px-space-lg py-space-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">编辑流水记录</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">流水编号 #REC-20261104-03</span>
+</div>
+</div>
+<button class="p-space-xs rounded-full hover:bg-surface-variant text-on-surface-variant transition-all" onclick="closeDrawer()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- 抽屉表单内容区 -->
+<div class="flex-1 overflow-y-auto p-space-lg flex flex-col gap-space-lg">
+<!-- 收支类型马卡龙切换 -->
+<div class="flex p-1 bg-surface-container-low rounded-xl">
+<button class="flex-1 py-space-xs rounded-lg font-label-md text-label-md bg-error text-on-error font-bold shadow-sm" type="button">支出</button>
+<button class="flex-1 py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface" type="button">收入</button>
+<button class="flex-1 py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface" type="button">转账</button>
+</div>
+<!-- 金额大字号输入 -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">发生金额 (元)</label>
+<div class="relative flex items-center"><!-- 记录行 1: IMAX电影票 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">movie</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">IMAX电影票</span>
+<span class="font-label-sm text-label-sm bg-surface-variant text-on-surface-variant px-space-xs py-[2px] rounded-md flex-shrink-0">娱乐 · 电影</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">20:10</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">account_balance_wallet</span>支付宝</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥85.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-space-lg"></div>
+<!-- 记录行 2: 火锅聚餐 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">soup_kitchen</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">火锅聚餐</span>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-space-xs py-[2px] rounded-md flex-shrink-0">餐饮 · 晚餐</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant font-medium px-space-xs py-[2px] rounded-md flex-shrink-0">#聚会</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">19:00</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">payments</span>微信支付</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥175.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div></div>
+</div>
+<!-- 分类选择 -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">账目分类</label>
+<div class="grid grid-cols-2 gap-space-sm"><!-- 记录行 1: 工资收入（薄荷绿高亮） -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md bg-tertiary-fixed/15 hover:bg-tertiary-fixed/25 transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center font-bold group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">attach_money</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">10月工资薪酬打卡</span>
+<span class="font-label-sm text-label-sm bg-tertiary text-on-tertiary font-semibold px-space-xs py-[2px] rounded-md flex-shrink-0">收入 · 工资</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant font-medium px-space-xs py-[2px] rounded-md flex-shrink-0">#生活必要</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">10:00</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">account_balance</span>工商银行</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-tertiary tracking-tight text-right flex-shrink-0">
++¥12,500.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="h-px bg-surface-container-high mx-space-lg"></div>
+<!-- 记录行 2: 物业与水电气 -->
+<div class="group flex items-center justify-between gap-space-md px-space-lg py-space-md hover:bg-surface-container-low transition-colors duration-150">
+<div class="flex items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:scale-105 transition-transform flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">water_drop</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0 gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap min-w-0">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface truncate">11月物业与水电气</span>
+<span class="font-label-sm text-label-sm bg-surface-variant text-on-surface-variant px-space-xs py-[2px] rounded-md flex-shrink-0">居家 · 物业</span>
+<span class="font-label-sm text-label-sm bg-surface-container text-primary font-medium px-space-xs py-[2px] rounded-md flex-shrink-0">#生活必要</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="">11:30</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">payments</span>微信支付</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg flex-shrink-0 ml-space-md">
+<div class="font-headline-sm text-headline-sm font-bold text-error tracking-tight text-right flex-shrink-0">
+-¥1,200.00
+</div>
+<div class="flex items-center gap-space-xs opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0">
+<button class="p-space-xs rounded-lg hover:bg-surface-variant text-on-surface-variant hover:text-primary transition-all" onclick="openDrawer('edit')" title="编辑记录" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-space-xs rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error transition-all" title="删除记录" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div></div>
+</div>
+<!-- 备注说明 -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">商户与备注</label>
+<input class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" type="text" value="星巴克燕麦拿铁">
+</div>
+<!-- 支付账户 -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">资金账户</label>
+<div class="flex items-center justify-between px-space-md py-space-sm bg-surface-container-low rounded-xl cursor-pointer hover:bg-surface-container transition-all">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">credit_card</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">招商银行信用卡 (尾号 6819)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">arrow_forward_ios</span>
+</div>
+</div>
+<!-- 发生日期与时间 -->
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">日期</label>
+<input class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface outline-none cursor-pointer" type="date" value="2026-11-04">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">时间</label>
+<input class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface outline-none cursor-pointer" type="time" value="14:15">
+</div>
+</div>
+<!-- 标签管理 Chip -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-semibold">附加标签</label>
+<div class="flex items-center flex-wrap gap-space-xs">
+<span class="flex items-center gap-1 bg-primary text-on-primary px-space-sm py-[3px] rounded-full font-label-sm text-label-sm">
+              #报销
+              <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+</span>
+<span class="flex items-center gap-1 bg-surface-container-low text-on-surface-variant hover:text-on-surface px-space-sm py-[3px] rounded-full font-label-sm text-label-sm cursor-pointer">
+              + 添加标签
+            </span>
+</div>
+</div>
+</div>
+<!-- 抽屉底部操作栏 -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between gap-space-md">
+<button class="px-space-lg py-space-sm rounded-xl font-label-md text-label-md text-error hover:bg-error-container transition-all flex items-center gap-1" onclick="closeDrawer()" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span class="">删除此笔</span>
+</button>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-lg py-space-sm rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-variant transition-all" onclick="closeDrawer()" type="button">
+            取消
+          </button>
+<button class="px-space-lg py-space-sm rounded-xl font-label-md text-label-md bg-primary-container hover:bg-primary text-on-primary-container shadow-md transition-all active:scale-95" onclick="saveRecord()" type="button">
+            保存修改
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- 轻量交互脚本：侧滑抽屉控制、筛选交互 -->
+<script>
+    function openDrawer() {
+      const overlay = document.getElementById('drawerOverlay');
+      const panel = document.getElementById('drawerPanel');
+      if (overlay && panel) {
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        overlay.classList.add('opacity-100');
+        panel.classList.remove('translate-x-full');
+      }
+    }
+
+    function closeDrawer() {
+      const overlay = document.getElementById('drawerOverlay');
+      const panel = document.getElementById('drawerPanel');
+      if (overlay && panel) {
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+        overlay.classList.remove('opacity-100');
+        panel.classList.add('translate-x-full');
+      }
+    }
+
+    function saveRecord() {
+      // 模拟保存并提示
+      closeDrawer();
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-6 right-6 bg-inverse-surface text-inverse-on-surface px-space-lg py-space-sm rounded-xl shadow-xl font-label-md text-label-md z-50 flex items-center gap-2';
+      toast.innerHTML = '<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">check_circle</span><span>修改已成功保存至云端</span>';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 2500);
+    }
+
+    // 绑定时间分段选择切换高亮
+    document.querySelectorAll('.time-pill').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.time-pill').forEach(b => {
+          b.classList.remove('active', 'bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+          b.classList.add('text-on-surface-variant');
+        });
+        this.classList.add('active', 'bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+        this.classList.remove('text-on-surface-variant');
+      });
+    });
+
+    // 绑定类型筛选切换
+    document.querySelectorAll('.type-filter').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.type-filter').forEach(b => {
+          b.classList.remove('active', 'bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+          b.classList.add('text-on-surface-variant');
+        });
+        this.classList.add('active', 'bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+        this.classList.remove('text-on-surface-variant');
+      });
+    });
+
+    // 导出操作 Toast 模拟
+    document.getElementById('exportCsvBtn')?.addEventListener('click', () => {
+      alert('正在导出 2026年11月 全部流水账目 (CSV 格式)...');
+    });
+    document.getElementById('exportJsonBtn')?.addEventListener('click', () => {
+      alert('正在生成全量加密数据备份 (JSON 格式)...');
+    });
+  </script>
+</div></main></div>
+
+</body></html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="macaron">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>预算 · 轻记账</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="page-app" data-page="budget">
+  <div class="app-shell">
+    <div id="sidebar"></div>
+
+    <div class="app-body">
+      <header class="appbar">
+        <div class="appbar__title">
+          <h1>预算</h1>
+          <p class="appbar__sub">按自己的周期控制支出</p>
+        </div>
+        <div class="appbar__actions">
+          <span class="sync-chip" data-sync-chip hidden></span>
+          <a class="avatar" id="appbarAvatar" href="settings.html" aria-label="账号与设置">L</a>
+        </div>
+      </header>
+
+      <main class="app-content">
+        <section class="budget-hero" aria-label="预算进度">
+          <p class="budget-period" id="budgetPeriod">计算中…</p>
+
+          <div class="budget-ring">
+            <svg viewBox="0 0 168 168" aria-hidden="true">
+              <circle class="budget-ring__track" cx="84" cy="84" r="72"></circle>
+              <circle class="budget-ring__value" id="ringValue" cx="84" cy="84" r="72"></circle>
+            </svg>
+            <div class="budget-ring__center">
+              <span class="budget-ring__rate" id="ringRate">0%</span>
+              <span class="budget-ring__label">已使用</span>
+            </div>
+          </div>
+
+          <p class="muted" id="budgetMessage">设置总预算后即可查看进度。</p>
+
+          <div class="budget-meta">
+            <div>
+              <span>总预算</span>
+              <strong class="num" id="metaTotal">—</strong>
+            </div>
+            <div>
+              <span>已用</span>
+              <strong class="num" id="metaUsed">—</strong>
+            </div>
+            <div>
+              <span>剩余</span>
+              <strong class="num" id="metaRemain">—</strong>
+            </div>
+          </div>
+        </section>
+
+        <div class="banner" id="budgetBanner" style="margin-top: 12px" hidden>
+          <span class="material-symbols-rounded" id="budgetBannerIcon">info</span>
+          <span id="budgetBannerText"></span>
+        </div>
+
+        <section class="card" style="margin-top: 16px" aria-label="预算设置">
+          <div class="card__head">
+            <h2>预算设置</h2>
+            <span class="card__hint">保存后每个周期自动沿用</span>
+          </div>
+
+          <div class="form-grid form-grid--2">
+            <label class="field">
+              <span class="field__label">每周期总预算（元）</span>
+              <span class="input-affix">
+                <span class="input-affix__icon"><span class="material-symbols-rounded">savings</span></span>
+                <input class="input" id="budgetTotal" type="number" min="0" step="0.01" inputmode="decimal" placeholder="例如 6000">
+              </span>
+              <span class="field__hint">留空或填 0 表示暂不启用预算提示</span>
+            </label>
+
+            <label class="field">
+              <span class="field__label">周期起始日</span>
+              <select class="select" id="budgetStartDay"></select>
+              <span class="field__hint">周期为「每月 X 日至次月 X−1 日」，X = 1 时即自然月</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top: 16px" aria-label="分类预算">
+          <div class="card__head">
+            <h2>分类预算</h2>
+            <span class="card__hint">选填，与总预算独立</span>
+          </div>
+          <div class="budget-cat-list" id="categoryBudgets"></div>
+        </section>
+
+        <button class="btn btn--primary btn--block" id="saveBudget" type="button" style="margin-top: 16px">
+          <span class="material-symbols-rounded btn__icon">save</span>
+          保存预算设置
+        </button>
+
+        <p class="ledger-footnote">
+          <span class="material-symbols-rounded">info</span>
+          预算已用仅统计当前周期内的支出，与自然月统计相互独立
+        </p>
+      </main>
+    </div>
+
+    <div id="tabbar"></div>
+  </div>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/store.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/budget.js"></script>
+</body>
+</html>

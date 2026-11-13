@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="macaron">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="轻记账 — 30 秒记一笔，看得懂收支与预算的个人记账工具">
+  <title>登录 · 轻记账</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/auth.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="page-auth" data-auth="login">
+  <div class="auth-shell">
+    <aside class="auth-aside">
+      <div class="auth-aside__brand">
+        <span class="auth-brand__logo"><span class="material-symbols-rounded">account_balance_wallet</span></span>
+        <span>
+          <strong>轻记账</strong>
+          <small>Pastel Ledger</small>
+        </span>
+      </div>
+
+      <div class="auth-aside__body">
+        <h2>把每一笔花销，<br>变成看得懂的<em>结余</em>。</h2>
+        <p>30 秒记一笔，月底看收支。预算、分类与统计自动汇总，手机和电脑登录同一个账号，看到同一份账。</p>
+        <div class="auth-points">
+          <div class="auth-point">
+            <span class="auth-point__icon"><span class="material-symbols-rounded">bolt</span></span>
+            <div>
+              <strong>30 秒记一笔</strong>
+              <span>自定义数字键盘，最少字段完成记录</span>
+            </div>
+          </div>
+          <div class="auth-point">
+            <span class="auth-point__icon"><span class="material-symbols-rounded">donut_large</span></span>
+            <div>
+              <strong>月度收支与结余</strong>
+              <span>收入、支出、结余率与分类构成一眼看清</span>
+            </div>
+          </div>
+          <div class="auth-point">
+            <span class="auth-point__icon"><span class="material-symbols-rounded">cloud_done</span></span>
+            <div>
+              <strong>账号云同步</strong>
+              <span>离线也能记，联网后自动同步</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="auth-aside__foot">账号信息加密存储于服务器，本地仅缓存账本数据。</p>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <div class="auth-brand">
+          <span class="auth-brand__logo"><span class="material-symbols-rounded">account_balance_wallet</span></span>
+          <span>
+            <strong>轻记账</strong>
+            <small>Pastel Ledger</small>
+          </span>
+        </div>
+
+        <h1 class="auth-heading">欢迎回来</h1>
+        <p class="auth-sub">登录后继续记录今天的收支。</p>
+
+        <form class="auth-form" id="authForm" novalidate>
+          <label class="field">
+            <span class="field__label">邮箱</span>
+            <span class="input-affix">
+              <span class="input-affix__icon"><span class="material-symbols-rounded">mail</span></span>
+              <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+            </span>
+          </label>
+
+          <label class="field">
+            <span class="field__label">密码</span>
+            <span class="input-affix">
+              <span class="input-affix__icon"><span class="material-symbols-rounded">lock</span></span>
+              <input class="input" id="password" name="password" type="password" autocomplete="current-password" placeholder="请输入密码">
+              <button class="icon-btn" type="button" data-toggle-password="password" aria-label="显示密码">
+                <span class="material-symbols-rounded">visibility</span>
+              </button>
+            </span>
+          </label>
+
+          <div class="auth-options">
+            <label class="checkbox">
+              <input type="checkbox" id="remember" checked>
+              <span>记住登录状态</span>
+            </label>
+            <a class="link" href="forgot-password.html">忘记密码？</a>
+          </div>
+
+          <p class="form-error" id="formError" role="alert"></p>
+
+          <button class="btn btn--primary btn--block" type="submit">登录</button>
+        </form>
+
+        <div class="auth-tip">
+          <span class="material-symbols-rounded">info</span>
+          <div>
+            演示账号：<strong>demo@ledger.app</strong> / <strong>demo1234</strong>
+            <button type="button" id="fillDemo">一键填入</button>
+          </div>
+        </div>
+
+        <p class="auth-foot">还没有账号？<a class="link" href="register.html">立即注册</a></p>
+
+        <p class="auth-legal">
+          <span class="material-symbols-rounded">shield</span>
+          登录即表示同意用户协议与隐私说明，账号信息将安全存储于服务器。
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/store.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/auth.js"></script>
+</body>
+</html>

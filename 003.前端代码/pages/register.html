@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="macaron">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>注册 · 轻记账</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/auth.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="page-auth" data-auth="register">
+  <div class="auth-shell">
+    <aside class="auth-aside">
+      <div class="auth-aside__brand">
+        <span class="auth-brand__logo"><span class="material-symbols-rounded">account_balance_wallet</span></span>
+        <span>
+          <strong>轻记账</strong>
+          <small>Pastel Ledger</small>
+        </span>
+      </div>
+
+      <div class="auth-aside__body">
+        <h2>从第一笔开始，<br>建立自己的<em>收支节奏</em>。</h2>
+        <p>支出与收入分开记录，按月汇总结余。设置预算后，接近上限时会提前提醒，不必等到月底才发现超支。</p>
+        <div class="auth-points">
+          <div class="auth-point">
+            <span class="auth-point__icon"><span class="material-symbols-rounded">category</span></span>
+            <div>
+              <strong>两套分类，随手可选</strong>
+              <span>12 个支出分类与 7 个收入分类，可自定义</span>
+            </div>
+          </div>
+          <div class="auth-point">
+            <span class="auth-point__icon"><span class="material-symbols-rounded">savings</span></span>
+            <div>
+              <strong>按自己的周期做预算</strong>
+              <span>周期起始日 1–28 可调，跨月也能对齐发薪日</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="auth-aside__foot">演示环境，不会发送真实邮件。</p>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <div class="auth-brand">
+          <span class="auth-brand__logo"><span class="material-symbols-rounded">account_balance_wallet</span></span>
+          <span>
+            <strong>轻记账</strong>
+            <small>Pastel Ledger</small>
+          </span>
+        </div>
+
+        <h1 class="auth-heading">创建账号</h1>
+        <p class="auth-sub">使用邮箱注册，开始记录你的第一笔收支。</p>
+
+        <form class="auth-form" id="authForm" novalidate>
+          <label class="field">
+            <span class="field__label">邮箱</span>
+            <span class="input-affix">
+              <span class="input-affix__icon"><span class="material-symbols-rounded">mail</span></span>
+              <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+            </span>
+          </label>
+
+          <div class="field">
+            <span class="field__label">邮箱验证码</span>
+            <div class="code-row">
+              <input class="input" id="code" name="code" type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="6 位验证码">
+              <button class="btn btn--soft" type="button" id="sendCode">获取验证码</button>
+            </div>
+            <span class="field__hint" id="codeHint">验证码将发送至邮箱，10 分钟内有效</span>
+          </div>
+
+          <label class="field">
+            <span class="field__label">密码</span>
+            <span class="input-affix">
+              <span class="input-affix__icon"><span class="material-symbols-rounded">lock</span></span>
+              <input class="input" id="password" name="password" type="password" autocomplete="new-password" placeholder="8–32 位，含字母与数字">
+              <button class="icon-btn" type="button" data-toggle-password="password" aria-label="显示密码">
+                <span class="material-symbols-rounded">visibility</span>
+              </button>
+            </span>
+            <span class="field__hint">至少 8 位，需同时包含字母与数字</span>
+          </label>
+
+          <label class="field">
+            <span class="field__label">确认密码</span>
+            <span class="input-affix">
+              <span class="input-affix__icon"><span class="material-symbols-rounded">lock_reset</span></span>
+              <input class="input" id="confirm" name="confirm" type="password" autocomplete="new-password" placeholder="再次输入密码">
+            </span>
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" id="agree">
+            <span>我已阅读并同意用户协议与隐私说明</span>
+          </label>
+
+          <p class="form-error" id="formError" role="alert"></p>
+
+          <button class="btn btn--primary btn--block" type="submit">注册并开始记账</button>
+        </form>
+
+        <p class="auth-foot">已有账号？<a class="link" href="login.html">返回登录</a></p>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/store.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/auth.js"></script>
+</body>
+</html>

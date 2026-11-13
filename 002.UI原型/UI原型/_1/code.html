@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-container": "#44806d", "on-tertiary-container": "#f9fffa", "secondary-container": "#9f86fe", "on-primary-fixed": "#1e0061", "secondary": "#644abe", "surface-container-highest": "#e7dff5", "surface-bright": "#fdf7ff", "on-secondary-fixed-variant": "#4b2fa5", "on-secondary-fixed": "#1e0060", "on-secondary-container": "#350e8f", "background": "#fdf7ff", "surface-container-low": "#f8f1ff", "on-error": "#ffffff", "surface-dim": "#dfd6ed", "secondary-fixed": "#e7deff", "error-container": "#ffdad6", "primary-fixed-dim": "#cbbeff", "on-primary-container": "#fffcff", "surface-container-high": "#ede4fb", "outline": "#797585", "on-tertiary-fixed": "#002118", "inverse-on-surface": "#f5eeff", "tertiary": "#2a6755", "surface-container": "#f3eaff", "tertiary-fixed": "#b1efd8", "tertiary-fixed-dim": "#96d3bd", "on-tertiary-fixed-variant": "#0d503f", "inverse-primary": "#cbbeff", "on-primary-fixed-variant": "#4b2aae", "on-surface-variant": "#484553", "error": "#ba1a1a", "inverse-surface": "#322e3f", "on-tertiary": "#ffffff", "primary-container": "#7a5fe0", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "surface": "#fdf7ff", "surface-variant": "#e7dff5", "secondary-fixed-dim": "#ccbeff", "on-error-container": "#93000a", "primary-fixed": "#e7deff", "on-primary": "#ffffff", "outline-variant": "#cac4d6", "surface-tint": "#6347c7", "primary": "#6144c5", "on-background": "#1d1929", "on-surface": "#1d1929" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "margin": "2rem", "margin-mobile": "1rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-sm": "1rem", "space-xl": "2rem" }, fontFamily: { "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "display-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "700" }], "display-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_4px_20px_-2px_rgba(122,95,224,0.05)]"><div class="h-16 px-gutter-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="返回" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface">Add Record</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_2px_8px_rgba(97,68,197,0.25)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe min-h-screen bg-background px-margin-mobile"><div class="flex flex-col w-full pb-8">
+<!-- Subtle Ambient Glow Orbs -->
+<div class="relative w-full overflow-hidden flex flex-col items-center">
+<div class="absolute -top-12 -left-12 w-48 h-48 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -top-8 -right-10 w-44 h-44 bg-secondary-container/15 rounded-full blur-2xl pointer-events-none"></div>
+<!-- 1. Top Brand Header Area -->
+<div class="w-full flex flex-col items-center text-center pt-2 pb-5 px-space-sm relative z-10">
+<!-- Piggy Bank / Ledger Stylized Mascot Badge -->
+<div class="relative mb-3 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center shadow-sm">
+<svg class="w-9 h-9 text-primary" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<rect fill="currentColor" fill-opacity="0.12" height="28" rx="8" width="34" x="7" y="10"></rect>
+<path d="M14 17C14 15.3431 15.3431 14 17 14H31C32.6569 14 34 15.3431 34 17V31C34 32.6569 32.6569 34 31 34H17C15.3431 34 14 32.6569 14 31V17Z" fill="currentColor" fill-opacity="0.25"></path>
+<!-- Coin Slot / Piggy Snout Outline -->
+<path d="M20 22C20 20.8954 21.7909 20 24 20C26.2091 20 28 20.8954 28 22C28 23.1046 26.2091 24 24 24C21.7909 24 20 23.1046 20 22Z" fill="currentColor"></path>
+<circle cx="22" cy="22" fill="#FFFFFF" r="0.75"></circle>
+<circle cx="26" cy="22" fill="#FFFFFF" r="0.75"></circle>
+<!-- Piggy Ear Accent -->
+<path d="M12 15L16 11L18 15H12Z" fill="currentColor"></path>
+<!-- Cute Sparkle -->
+<path d="M35 12L36 9L39 8L36 7L35 4L34 7L31 8L34 9L35 12Z" fill="#7A5FE0"></path>
+</svg>
+</div>
+<span class="absolute -bottom-1 -right-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shadow-sm">
+          v3.2 纯净版
+        </span>
+</div>
+<div class="flex items-center gap-1.5 justify-center">
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">小猪记账本</h2>
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-[280px]">
+        轻简记账 · 离线私密 · 掌控收支节奏
+      </p>
+</div>
+<!-- 2. Segmented Mode Switcher (Tabs) -->
+<div class="w-full bg-surface-container-low p-1 rounded-xl flex items-center justify-between gap-1 shadow-sm mb-4">
+<button class="flex-1 py-2 px-2.5 rounded-lg font-label-md text-label-md transition-all duration-200 flex items-center justify-center gap-1 bg-surface-container-lowest text-primary shadow-sm" id="tab-code" onclick="switchLoginMode('code')">
+<span class="material-symbols-outlined text-[16px]">sms</span>
+<span>验证码登录</span>
+</button>
+<button class="flex-1 py-2 px-2.5 rounded-lg font-label-md text-label-md transition-all duration-200 flex items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface" id="tab-pwd" onclick="switchLoginMode('pwd')">
+<span class="material-symbols-outlined text-[16px]">key</span>
+<span>密码登录</span>
+</button>
+<button class="flex-1 py-2 px-2.5 rounded-lg font-label-md text-label-md transition-all duration-200 flex items-center justify-center gap-1 text-tertiary hover:text-on-tertiary-fixed-variant" id="tab-local" onclick="switchLoginMode('local')">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+<span>免登本地</span>
+</button>
+</div>
+<!-- 3. Form Container Card -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col gap-3">
+<!-- Input Group 1: Phone / Account -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant flex items-center justify-between" for="account-input">
+<span id="account-label">手机号码</span>
+<span class="text-outline text-[11px] font-normal">支持全球手机号或邮箱</span>
+</label>
+<div class="flex items-center bg-surface-container-low rounded-xl px-3 py-2.5 transition-all focus-within:bg-surface-bright focus-within:shadow-sm">
+<!-- Country code picker -->
+<div class="flex items-center gap-1 pr-2 mr-2 text-on-surface font-label-md text-label-md" id="country-code-pill">
+<span>+86</span>
+<span class="material-symbols-outlined text-outline text-[16px]">arrow_drop_down</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px] mr-2">phone_iphone</span>
+<input class="bg-transparent flex-1 font-body-md text-body-md text-on-surface outline-none placeholder:text-outline w-full" id="account-input" placeholder="请输入11位手机号" type="tel" value="188 0123 8899"/>
+<button aria-label="清空输入" class="w-6 h-6 flex items-center justify-center text-outline hover:text-on-surface" onclick="document.getElementById('account-input').value=''" type="button">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+</button>
+</div>
+</div>
+<!-- Input Group 2A: Verification Code -->
+<div class="flex flex-col gap-1.5" id="section-verify-code">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>短信验证码</span>
+<span class="text-primary text-[11px]">未注册手机号验证后自动建档</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center bg-surface-container-low rounded-xl px-3 py-2.5 flex-1 transition-all focus-within:bg-surface-bright focus-within:shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mr-2">verified_user</span>
+<input class="bg-transparent font-body-md text-body-md text-on-surface outline-none placeholder:text-outline w-full tracking-widest" maxlength="6" placeholder="6位数字验证码" type="text" value="682491"/>
+</div>
+<button class="h-[46px] px-3.5 rounded-xl bg-surface-container text-primary font-label-md text-label-md flex items-center justify-center whitespace-nowrap active:scale-95 transition-all" id="send-code-btn" onclick="handleSendCode()" type="button">
+<span id="send-code-text">重新获取 (49s)</span>
+</button>
+</div>
+</div>
+<!-- Input Group 2B: Password (hidden by default) -->
+<div class="hidden flex flex-col gap-1.5" id="section-password">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>登录密码</span>
+<button class="text-primary font-label-sm text-label-sm hover:underline" type="button">忘记密码？</button>
+</div>
+<div class="flex items-center bg-surface-container-low rounded-xl px-3 py-2.5 transition-all focus-within:bg-surface-bright focus-within:shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mr-2">lock</span>
+<input class="bg-transparent flex-1 font-body-md text-body-md text-on-surface outline-none placeholder:text-outline w-full" id="password-input" placeholder="请输入8~20位密码" type="password"/>
+<button aria-label="切换密码明文" class="w-6 h-6 flex items-center justify-center text-outline hover:text-on-surface" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-[18px]" id="pwd-eye-icon">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Local Guest Vault Notice (revealed on local mode) -->
+<div class="hidden bg-tertiary-fixed/40 p-3 rounded-xl flex items-start gap-2.5" id="section-local-vault">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5" style="font-variation-settings: 'FILL' 1;">security</span>
+<div class="flex flex-col">
+<p class="font-label-md text-label-md text-on-tertiary-fixed">已切换为零云端纯净模式</p>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant mt-0.5">
+            所有账目、资产账户均直接写入本机浏览器存储（IndexedDB），不上传任何服务器，支持无网断网丝滑记账。
+          </p>
+</div>
+</div>
+<!-- Auxiliary Checkbox & Help Link -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">30天内保持信任登录</span>
+</label>
+<button class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-0.5" type="button">
+<span>遇到问题</span>
+<span class="material-symbols-outlined text-[14px]">help</span>
+</button>
+</div>
+<!-- 4. Primary Call to Action Button -->
+<button class="w-full h-12 mt-2 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center gap-2 group" id="main-submit-btn" type="button">
+<span id="btn-text">立即进入记账本</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- 5. Local Safe Mode Friendly Highlight Card -->
+<div class="w-full mt-3 bg-surface-container-high/60 rounded-xl p-3 flex items-center justify-between gap-3 shadow-sm">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface">离线私密保护</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px]">加密存储</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">随时支持全量 JSON / Excel 导出及端到端备份</p>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container text-primary font-label-sm text-label-sm whitespace-nowrap hover:bg-surface-container-highest" onclick="switchLoginMode('local')" type="button">
+        切换免登
+      </button>
+</div>
+<!-- 6. Third Party Quick Entry Badges -->
+<div class="w-full flex flex-col items-center mt-5 mb-2">
+<div class="w-full flex items-center gap-3 mb-3">
+<div class="h-[1px] bg-surface-container flex-1"></div>
+<span class="font-label-sm text-label-sm text-outline">其他快捷与硬件通行证</span>
+<div class="h-[1px] bg-surface-container flex-1"></div>
+</div>
+<div class="flex items-center justify-center gap-4 w-full">
+<!-- Wechat Quick Access -->
+<button aria-label="微信快速授权" class="w-11 h-11 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-95 shadow-sm" type="button">
+<svg class="w-5 h-5 text-tertiary" fill="currentColor" viewbox="0 0 24 24">
+<path d="M8.5 4C4.36 4 1 6.91 1 10.5c0 2.01 1.05 3.8 2.68 4.98L3 18.5l3.29-1.64c.7.2 1.44.31 2.21.31.25 0 .5-.01.74-.03-.23-.53-.36-1.11-.36-1.72 0-3.23 3.09-5.84 6.9-5.84.42 0 .82.04 1.22.1C16.4 6.55 12.8 4 8.5 4zm-2.25 4c.69 0 1.25.56 1.25 1.25S6.94 10.5 6.25 10.5 5 9.94 5 9.25 5.56 8 6.25 8zm4.5 0c.69 0 1.25.56 1.25 1.25s-.56 1.25-1.25 1.25S8.5 9.94 8.5 9.25 9.06 8 9.75 8zm6.25 3.42c-3.31 0-6 2.24-6 5s2.69 5 6 5c.61 0 1.2-.09 1.76-.25L20.5 22.5l-.56-2.5c1.28-.93 2.06-2.28 2.06-3.83 0-2.76-2.69-5-6-5zm-2 3.33c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm4 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"></path>
+</svg>
+</button>
+<!-- Apple ID Entry -->
+<button aria-label="Apple ID登录" class="w-11 h-11 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-95 shadow-sm" type="button">
+<svg class="w-5 h-5 text-on-surface" fill="currentColor" viewbox="0 0 24 24">
+<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.42c.6-0.73 1.01-1.75.9-2.77-.87.04-1.92.58-2.54 1.31-.55.64-.99 1.67-.86 2.67 1 .08 1.9-.48 2.5-1.21z"></path>
+</svg>
+</button>
+<!-- Biometrics / Touch ID / Face ID Local Unlock -->
+<button aria-label="生物特征硬件直接解锁" class="w-11 h-11 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary hover:bg-surface-container-high transition-transform active:scale-95 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[22px]">fingerprint</span>
+</button>
+</div>
+</div>
+<!-- 7. Agreement & Policy Terms Acceptance -->
+<div class="w-full flex items-start gap-2 pt-2 px-1 text-center justify-center">
+<input checked="" class="mt-0.5 w-3.5 h-3.5 rounded text-primary accent-primary cursor-pointer shrink-0" id="policy-agreement" type="checkbox"/>
+<label class="font-body-sm text-[11px] leading-[16px] text-outline text-left" for="policy-agreement">
+        进入即代表您已阅读并同意
+        <a class="text-primary hover:underline" href="#terms">《用户服务协议》</a>
+        与
+        <a class="text-primary hover:underline" href="#privacy">《本地隐私防护承诺》</a>
+</label>
+</div>
+</div>
+</div>
+<script>
+  let currentMode = 'code';
+  let countdownTimer = null;
+  let remainingSeconds = 49;
+
+  function switchLoginMode(mode) {
+    currentMode = mode;
+    const tabCode = document.getElementById('tab-code');
+    const tabPwd = document.getElementById('tab-pwd');
+    const tabLocal = document.getElementById('tab-local');
+
+    const secCode = document.getElementById('section-verify-code');
+    const secPwd = document.getElementById('section-password');
+    const secLocal = document.getElementById('section-local-vault');
+    const countryPill = document.getElementById('country-code-pill');
+    const accountLabel = document.getElementById('account-label');
+    const accountInput = document.getElementById('account-input');
+    const btnText = document.getElementById('btn-text');
+
+    // Reset tab active visuals
+    [tabCode, tabPwd, tabLocal].forEach(tab => {
+      tab.className = "flex-1 py-2 px-2.5 rounded-lg font-label-md text-label-md transition-all duration-200 flex items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface";
+    });
+
+    if (mode === 'code') {
+      tabCode.className = "flex-1 py-2 px-2.5 rounded-lg font-label-md text-label-md transition-all duration-200 flex items-center justify-center gap-1 bg-surface-container-lowest text-primary shadow-sm";
+      secCode.classList.remove('hidden');
+      secPwd.classList.add('hidden');
+      secLocal.classList.add('hidden');
+      countryPill.classList.remove('hidden');
+      accountLabel.innerText = "手机号码";
+      accountInput.placeholder = "请输入11位手机号";
+      accountInput.type = "tel";
+      btnText.innerText = "立即进入记账本";
+    } else if (mode === 'pwd') {
+      tabPwd.className = "flex-1 py-2 px-2.5 rounded-lg font-label-md text-label-md transition-all duration-200 flex items-center justify-center gap-1 bg-surface-container-lowest text-primary shadow-sm";
+      secCode.classList.add('hidden');
+      secPwd.classList.remove('hidden');
+      secLocal.classList.add('hidden');
+      countryPill.classList.add('hidden');
+      accountLabel.innerText = "账号 / 邮箱 / 手机";
+      accountInput.placeholder = "请输入手机号或已绑定的邮箱";
+      accountInput.type = "text";
+      btnText.innerText = "账号密码登录";
+    } else if (mode === 'local') {
+      tabLocal.className = "flex-1 py-2 px-2.5 rounded-lg font-label-md text-label-md transition-all duration-200 flex items-center justify-center gap-1 bg-surface-container-lowest text-tertiary shadow-sm";
+      secCode.classList.add('hidden');
+      secPwd.classList.add('hidden');
+      secLocal.classList.remove('hidden');
+      countryPill.classList.add('hidden');
+      accountLabel.innerText = "账本空间昵称 (可选)";
+      accountInput.placeholder = "例如：我的极简日常账本";
+      accountInput.type = "text";
+      accountInput.value = "极简小猪账本";
+      btnText.innerText = "开启无网本地私密体验";
+    }
+  }
+
+  function togglePasswordVisibility() {
+    const pwdInput = document.getElementById('password-input');
+    const eyeIcon = document.getElementById('pwd-eye-icon');
+    if (pwdInput.type === 'password') {
+      pwdInput.type = 'text';
+      eyeIcon.innerText = 'visibility';
+    } else {
+      pwdInput.type = 'password';
+      eyeIcon.innerText = 'visibility_off';
+    }
+  }
+
+  function handleSendCode() {
+    if (countdownTimer) return;
+    remainingSeconds = 60;
+    const btn = document.getElementById('send-code-btn');
+    const textSpan = document.getElementById('send-code-text');
+
+    btn.disabled = true;
+    btn.classList.add('opacity-70');
+    textSpan.innerText = `${remainingSeconds}s 重新发送`;
+
+    countdownTimer = setInterval(() => {
+      remainingSeconds--;
+      if (remainingSeconds <= 0) {
+        clearInterval(countdownTimer);
+        countdownTimer = null;
+        btn.disabled = false;
+        btn.classList.remove('opacity-70');
+        textSpan.innerText = "获取验证码";
+      } else {
+        textSpan.innerText = `${remainingSeconds}s 重新发送`;
+      }
+    }, 1000);
+  }
+</script></main></body></html>

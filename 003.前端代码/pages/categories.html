@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="macaron">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>分类管理 · 轻记账</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="page-app" data-page="categories">
+  <div class="app-shell">
+    <div id="sidebar"></div>
+
+    <div class="app-body">
+      <header class="appbar">
+        <div class="appbar__title">
+          <div class="cluster" style="gap: 4px">
+            <a class="icon-btn" href="settings.html" aria-label="返回设置">
+              <span class="material-symbols-rounded">arrow_back</span>
+            </a>
+            <h1>分类管理</h1>
+          </div>
+          <p class="appbar__sub">支出与收入各自独立维护</p>
+        </div>
+        <div class="appbar__actions">
+          <span class="sync-chip" data-sync-chip hidden></span>
+          <a class="avatar" id="appbarAvatar" href="settings.html" aria-label="账号与设置">L</a>
+        </div>
+      </header>
+
+      <main class="app-content">
+        <div class="list-toolbar">
+          <div class="segmented" id="typeTabs" role="tablist" aria-label="分类类型">
+            <button class="segmented__item is-active" type="button" data-type="expense" role="tab">支出分类</button>
+            <button class="segmented__item" type="button" data-type="income" role="tab">收入分类</button>
+          </div>
+          <div class="list-toolbar__actions">
+            <button class="btn btn--primary btn--sm" id="addCategory" type="button">
+              <span class="material-symbols-rounded" style="font-size: 18px">add</span>
+              新建分类
+            </button>
+          </div>
+        </div>
+
+        <div class="banner" style="margin-bottom: 12px">
+          <span class="material-symbols-rounded">lightbulb</span>
+          <span>内置分类不可删除，可停用；自定义分类在没有流水记录时可删除。停用只影响新建记录，历史流水与统计不变。</span>
+        </div>
+
+        <div class="cat-list" id="catList"></div>
+
+        <p class="ledger-footnote">
+          <span class="material-symbols-rounded">drag_indicator</span>
+          分类顺序会同步到记一笔页面的选择器
+        </p>
+      </main>
+    </div>
+
+    <div id="tabbar"></div>
+  </div>
+
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/store.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <script src="../assets/js/categories.js"></script>
+</body>
+</html>

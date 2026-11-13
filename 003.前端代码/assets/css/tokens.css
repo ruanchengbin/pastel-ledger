@@ -1,0 +1,166 @@
+/* ==========================================================================
+   tokens.css — 设计令牌
+   颜色 / 字体 / 间距 / 圆角 / 阴影 / 动效
+   主题：默认「马卡龙紫」，共 4 套，可在设置页切换（见 theme.js）
+   ========================================================================== */
+
+:root {
+  /* 字体 */
+  --font-sans: "Plus Jakarta Sans", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+
+  /* 字号 */
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 32px;
+  --text-4xl: 40px;
+
+  /* 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* 圆角 */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+
+  /* 阴影：柔和的紫调投影 */
+  --shadow-sm: 0 1px 2px rgba(35, 28, 58, 0.04), 0 2px 8px rgba(110, 86, 184, 0.05);
+  --shadow-md: 0 4px 20px -2px rgba(110, 86, 184, 0.1);
+  --shadow-lg: 0 16px 40px -12px rgba(110, 86, 184, 0.28);
+  --shadow-focus: 0 0 0 4px var(--focus-ring);
+
+  /* 语义色：全主题固定（PRD 3.4） */
+  --color-expense: #2e2a3b;
+  --color-income: #2f7d64;
+  --color-warn: #9a6b1f;
+  --color-danger: #b23a48;
+  --color-success: #2f7d64;
+
+  /* 布局 */
+  --shell-max: 1180px;
+  --sidebar-w: 248px;
+  --appbar-h: 64px;
+  --tabbar-h: 64px;
+
+  /* 动效 */
+  --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 320ms;
+
+  /* 主题默认值（马卡龙紫） */
+  --brand: #a78bfa;
+  --brand-strong: #6e56b8;
+  --brand-soft: #ede7fb;
+  --brand-mist: #f4f0fe;
+  --on-brand: #ffffff;
+
+  --bg: #faf8fd;
+  --surface: #ffffff;
+  --surface-2: #f5f1fc;
+  --border: #e8e2f4;
+
+  --text: #221e2e;
+  --text-2: #57516b;
+  --text-3: #8b849d;
+  --focus-ring: rgba(110, 86, 184, 0.22);
+}
+
+/* ------------------------------ 主题 1：马卡龙紫（默认） ------------------------------ */
+html[data-theme="macaron"] {
+  --brand: #a78bfa;
+  --brand-strong: #6e56b8;
+  --brand-soft: #ede7fb;
+  --brand-mist: #f4f0fe;
+  --on-brand: #ffffff;
+
+  --bg: #faf8fd;
+  --surface: #ffffff;
+  --surface-2: #f5f1fc;
+  --border: #e8e2f4;
+
+  --text: #221e2e;
+  --text-2: #57516b;
+  --text-3: #8b849d;
+  --focus-ring: rgba(110, 86, 184, 0.22);
+}
+
+/* ------------------------------ 主题 2：海盐蓝 ------------------------------ */
+html[data-theme="ocean"] {
+  --brand: #8fbce8;
+  --brand-strong: #2c6a9e;
+  --brand-soft: #e3f0fa;
+  --brand-mist: #f0f7fd;
+  --on-brand: #ffffff;
+
+  --bg: #f7fafd;
+  --surface: #ffffff;
+  --surface-2: #eef6fc;
+  --border: #dce9f5;
+
+  --text: #1b2634;
+  --text-2: #4c5c6e;
+  --text-3: #7e8c9c;
+  --focus-ring: rgba(44, 106, 158, 0.22);
+}
+
+/* ------------------------------ 主题 3：薄荷青 ------------------------------ */
+html[data-theme="mint"] {
+  --brand: #86cfb8;
+  --brand-strong: #2a7561;
+  --brand-soft: #e1f3ec;
+  --brand-mist: #f0faf6;
+  --on-brand: #ffffff;
+
+  --bg: #f6fbf9;
+  --surface: #ffffff;
+  --surface-2: #edf8f3;
+  --border: #d9eee5;
+
+  --text: #182a25;
+  --text-2: #49645b;
+  --text-3: #7c948c;
+  --focus-ring: rgba(42, 117, 97, 0.22);
+}
+
+/* ------------------------------ 主题 4：暖杏橙 ------------------------------ */
+html[data-theme="apricot"] {
+  --brand: #f0b58c;
+  --brand-strong: #9b5527;
+  --brand-soft: #fbeadd;
+  --brand-mist: #fdf5ee;
+  --on-brand: #ffffff;
+
+  --bg: #fdf9f5;
+  --surface: #ffffff;
+  --surface-2: #fcf2e9;
+  --border: #f3e3d5;
+
+  --text: #2c211a;
+  --text-2: #6a574a;
+  --text-3: #99887b;
+  --focus-ring: rgba(155, 85, 39, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur: 0ms;
+    --dur-slow: 0ms;
+  }
+}

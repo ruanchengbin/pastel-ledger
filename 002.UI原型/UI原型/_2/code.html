@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-variant":"#e7dff5","on-secondary-fixed-variant":"#4b2fa5","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","on-tertiary-fixed":"#002118","outline-variant":"#cac4d6","surface-container":"#f3eaff","on-primary":"#ffffff","surface-bright":"#fdf7ff","surface":"#fdf7ff","error":"#ba1a1a","outline":"#797585","tertiary-container":"#44806d","inverse-on-surface":"#f5eeff","surface-container-high":"#ede4fb","on-background":"#1d1929","tertiary-fixed":"#b1efd8","tertiary-fixed-dim":"#96d3bd","inverse-primary":"#cbbeff","on-tertiary-container":"#f9fffa","on-surface-variant":"#484553","on-surface":"#1d1929","on-error-container":"#93000a","surface-tint":"#6347c7","primary-fixed":"#e7deff","secondary-fixed-dim":"#ccbeff","on-secondary-container":"#350e8f","on-primary-container":"#fffcff","on-secondary-fixed":"#1e0060","on-tertiary":"#ffffff","on-primary-fixed-variant":"#4b2aae","surface-dim":"#dfd6ed","primary-fixed-dim":"#cbbeff","on-tertiary-fixed-variant":"#0d503f","on-primary-fixed":"#1e0061","tertiary":"#2a6755","primary":"#6144c5","secondary":"#644abe","surface-container-low":"#f8f1ff","secondary-fixed":"#e7deff","background":"#fdf7ff","secondary-container":"#9f86fe","error-container":"#ffdad6","inverse-surface":"#322e3f","on-error":"#ffffff","surface-container-highest":"#e7dff5","primary-container":"#7a5fe0"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter":"1.5rem","gutter-sm":"1rem","space-sm":"0.5rem","space-md":"1rem","space-lg":"1.5rem",margin:"2rem","margin-mobile":"1rem","space-xs":"0.25rem","space-xl":"2rem"},fontFamily:{"headline-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"]},fontSize:{"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"600"}],"display-lg-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(122,95,224,0.05)] z-50 flex flex-col justify-between py-margin"><div class="flex flex-col gap-space-xl px-space-lg"><div class="flex items-center gap-space-sm px-space-xs"><img alt="记账本 Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wu5og5Pm7WlwcQ-hRmkFtNfsYKUYMyuy78M2j-tFq-0ccZsNmYDeo5XvDTbjaleltbqcnwpCL3fy4qpzLjcZeg_glSm8zPXzQji1LqNnCczjXId8-Xdb_j4psd_xZpCzSHDo0wfX8pRze2Thiy9dWTmiMYwTVbbRgka1dogsXBtjoR8drvVwlIrTAMqWm2NayjT1q28iXh1upBr5n_2GZY0eTZ7NiS9d5F9Dc-Xdr7"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">记账本</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-fixed text-on-primary-fixed-variant font-label-lg text-label-lg shadow-[0_2px_8px_rgba(122,95,224,0.12)]"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>首页概览</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="records" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>收支流水</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl transition-all bg-primary-fixed text-on-primary-fixed-variant font-label-lg text-label-lg shadow-[0_2px_8px_rgba(122,95,224,0.12)]" data-path="stats" href="#"><span class="material-symbols-outlined text-[20px]">donut_large</span><span>统计报表</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>偏好设置</span></a></nav></div><div class="px-space-lg"><div class="p-space-md bg-surface-container rounded-xl flex items-center justify-between"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant">记账周期</span><span class="font-label-md text-label-md text-primary font-semibold">本月进行中</span></div><span class="material-symbols-outlined text-primary text-[22px]">calendar_month</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(122,95,224,0.04)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm bg-surface-container px-space-md py-space-xs rounded-full shadow-[0_2px_6px_-1px_rgba(34,30,46,0.02)]"><span class="material-symbols-outlined text-primary text-[18px]">schedule</span><span class="font-label-md text-label-md text-on-surface-variant">今日 • 5月18日 星期日</span></div></div><div class="flex items-center gap-space-lg"><button class="flex items-center gap-space-sm bg-primary-container hover:bg-primary text-on-primary-container px-space-lg py-space-xs rounded-full shadow-[0_4px_14px_rgba(122,95,224,0.30)] hover:shadow-[0_6px_20px_rgba(122,95,224,0.40)] active:scale-95 transition-all" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span class="font-label-lg text-label-lg font-semibold">记一笔</span><kbd class="bg-on-primary-container/20 text-on-primary-container px-space-xs py-[1px] rounded font-label-sm text-label-sm">N</kbd></button><div class="flex items-center gap-space-sm"><div class="flex flex-col items-end"><span class="font-label-md text-label-md text-on-surface font-semibold">家庭理财小账本</span><span class="font-label-sm text-label-sm text-tertiary font-medium">个人云同步</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_2px_8px_rgba(122,95,224,0.15)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-0kRIdU0MrE-B45cTIESiCyexPugSjjN-_TiZEE-rpHBYnnFdn1zmUMkuTDgS8UlThJtbtaO5iOqfbPHGx26tfTkKYx4o79B6LgRKGgLMq8Dlq6qoDIY5MudZYtwwk7GMSCrWYTZqPZ06gQXzmiHl_Q-hJi1mN2JiWF9aOrmFIMdNoLw0cpm18X6SdU7S3AeUh8yiwff48q2LBM9EidenXT8qQqcy7zkNLvOztEI"/></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-margin pb-margin"><div class="flex flex-col w-full">
+<!-- 顶部时间维度与口径说明栏 -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-sm mb-space-lg">
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1.5 rounded-2xl shadow-sm">
+<button class="px-space-md py-1.5 rounded-xl font-label-md text-label-md bg-primary text-on-primary shadow-[0_2px_8px_rgba(97,68,197,0.25)] transition-all" type="button">本月</button>
+<button class="px-space-md py-1.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button">上月</button>
+<button class="px-space-md py-1.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button">本周</button>
+<button class="px-space-md py-1.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button">本年</button>
+<button class="flex items-center gap-1 px-space-md py-1.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" type="button">
+<span>自定义区间</span>
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-1.5 rounded-full text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm">数据口径说明：按实际发生日期归集，以分为最小存储单位</span>
+</div>
+</section>
+<!-- KPI 概览卡片矩阵 (5大指标) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md mb-space-xl">
+<!-- 总支出 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_20px_-2px_rgba(122,95,224,0.05)] hover:shadow-[0_10px_25px_-3px_rgba(122,95,224,0.12)] transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-3 -top-3 w-16 h-16 bg-error-container/40 rounded-full blur-xl group-hover:scale-125 transition-transform pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">当期总支出</span>
+<div class="w-8 h-8 rounded-full bg-error-container/50 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">¥4,280.00</div>
+<div class="flex items-center gap-1 mt-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[16px]">trending_down</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">-12.4%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">较上月同期支出收窄</span>
+</div>
+</div>
+</div>
+<!-- 总收入 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_20px_-2px_rgba(122,95,224,0.05)] hover:shadow-[0_10px_25px_-3px_rgba(122,95,224,0.12)] transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-3 -top-3 w-16 h-16 bg-tertiary-fixed/40 rounded-full blur-xl group-hover:scale-125 transition-transform pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">当期总收入</span>
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed/60 flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">¥12,500.00</div>
+<div class="flex items-center gap-1 mt-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">arrow_drop_up</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">+5.2%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">薪酬及副业到账</span>
+</div>
+</div>
+</div>
+<!-- 本月结余 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_20px_-2px_rgba(122,95,224,0.05)] hover:shadow-[0_10px_25px_-3px_rgba(122,95,224,0.12)] transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-3 -top-3 w-16 h-16 bg-primary-fixed/50 rounded-full blur-xl group-hover:scale-125 transition-transform pointer-events-none"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">本月沉淀结余</span>
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">savings</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">¥8,220.00</div>
+<div class="flex items-center justify-between mt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">储蓄率健康</span>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-bold">65.7%</span>
+</div>
+</div>
+</div>
+<!-- 日均支出 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_20px_-2px_rgba(122,95,224,0.05)] hover:shadow-[0_10px_25px_-3px_rgba(122,95,224,0.12)] transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">日均支出水准</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">query_builder</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">¥142.60</div>
+<div class="flex items-center gap-1 mt-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span class="font-label-sm text-label-sm">截至今天已过 4 天 (预算内)</span>
+</div>
+</div>
+</div>
+<!-- 记账笔数 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_20px_-2px_rgba(122,95,224,0.05)] hover:shadow-[0_10px_25px_-3px_rgba(122,95,224,0.12)] transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">已记录流水</span>
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">receipt</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">28</span>
+<span class="font-body-md text-body-md text-on-surface-variant">笔</span>
+</div>
+<div class="flex items-center gap-1 mt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">高频日常追踪 • 日均 7.0 笔</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 核心图表双栏布局 -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- 左栏：分类占比 -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_20px_-2px_rgba(122,95,224,0.05)] flex flex-col">
+<div class="flex items-center justify-between pb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">收支结构占比</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">点击分类可下钻关联流水记录</span>
+</div>
+<div class="inline-flex bg-surface-container p-1 rounded-xl">
+<button class="px-space-md py-1 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm font-semibold" type="button">支出占比</button>
+<button class="px-space-md py-1 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" type="button">收入占比</button>
+</div>
+</div>
+<!-- 环形图容器 -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-lg my-space-md">
+<div class="relative w-48 h-48 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 160 160">
+<!-- 环形背景轨道 -->
+<circle cx="80" cy="80" fill="transparent" r="62" stroke="#f3eaff" stroke-width="18"></circle>
+<!-- 餐饮 42% -> 163.6 (#AB8FF8) -->
+<circle class="transition-all duration-700 hover:opacity-85 cursor-pointer" cx="80" cy="80" fill="transparent" r="62" stroke="#AB8FF8" stroke-dasharray="163.6 389.5" stroke-dashoffset="0" stroke-width="18"></circle>
+<!-- 居家 28% -> 109.1 (#FFB3C0) -->
+<circle class="transition-all duration-700 hover:opacity-85 cursor-pointer" cx="80" cy="80" fill="transparent" r="62" stroke="#FFB3C0" stroke-dasharray="109.1 389.5" stroke-dashoffset="-163.6" stroke-width="18"></circle>
+<!-- 娱乐 12% -> 46.7 (#BBD7FF) -->
+<circle class="transition-all duration-700 hover:opacity-85 cursor-pointer" cx="80" cy="80" fill="transparent" r="62" stroke="#BBD7FF" stroke-dasharray="46.7 389.5" stroke-dashoffset="-272.7" stroke-width="18"></circle>
+<!-- 交通 8% -> 31.2 (#A8E6CF) -->
+<circle class="transition-all duration-700 hover:opacity-85 cursor-pointer" cx="80" cy="80" fill="transparent" r="62" stroke="#A8E6CF" stroke-dasharray="31.2 389.5" stroke-dashoffset="-319.4" stroke-width="18"></circle>
+<!-- 购物 6% -> 23.4 (#A0E7E5) -->
+<circle class="transition-all duration-700 hover:opacity-85 cursor-pointer" cx="80" cy="80" fill="transparent" r="62" stroke="#A0E7E5" stroke-dasharray="23.4 389.5" stroke-dashoffset="-350.6" stroke-width="18"></circle>
+<!-- 通讯 4% -> 15.6 (#FFE9A8) -->
+<circle class="transition-all duration-700 hover:opacity-85 cursor-pointer" cx="80" cy="80" fill="transparent" r="62" stroke="#FFE9A8" stroke-dasharray="15.6 389.5" stroke-dashoffset="-374.0" stroke-width="18"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">主要支出项</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">餐饮美食</span>
+<span class="font-label-md text-label-md text-primary font-bold">42%</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 w-full text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center justify-between p-1.5 rounded-lg bg-surface-container-low">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full" style="background-color: #AB8FF8;"></span>餐饮</span>
+<span class="font-semibold text-on-surface">¥1,800 (42%)</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded-lg">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full" style="background-color: #FFB3C0;"></span>居家</span>
+<span class="font-semibold text-on-surface">¥1,200 (28%)</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded-lg bg-surface-container-low">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full" style="background-color: #BBD7FF;"></span>娱乐</span>
+<span class="font-semibold text-on-surface">¥510 (12%)</span>
+</div>
+<div class="flex items-center justify-between p-1.5 rounded-lg">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full" style="background-color: #A8E6CF;"></span>交通</span>
+<span class="font-semibold text-on-surface">¥340 (8%)</span>
+</div>
+</div>
+</div>
+<!-- 分类明细进度条列表 -->
+<div class="flex flex-col gap-space-sm pt-space-xs overflow-y-auto">
+<!-- 餐饮 -->
+<div class="p-space-sm rounded-xl hover:bg-surface-container-low transition-all cursor-pointer group">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full" style="background-color: #AB8FF8;"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">餐饮美食</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">外卖、聚餐、咖啡</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">¥1,800.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">42%</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full rounded-full transition-all duration-500" style="width: 42%; background-color: #AB8FF8;"></div>
+</div>
+</div>
+<!-- 居家 -->
+<div class="p-space-sm rounded-xl hover:bg-surface-container-low transition-all cursor-pointer group">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full" style="background-color: #FFB3C0;"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">居家生活</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">日用品、物业、水电</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">¥1,200.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">28%</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full rounded-full transition-all duration-500" style="width: 28%; background-color: #FFB3C0;"></div>
+</div>
+</div>
+<!-- 娱乐 -->
+<div class="p-space-sm rounded-xl hover:bg-surface-container-low transition-all cursor-pointer group">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full" style="background-color: #BBD7FF;"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">休闲娱乐</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">影音会员、展览</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">¥510.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">12%</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full rounded-full transition-all duration-500" style="width: 12%; background-color: #BBD7FF;"></div>
+</div>
+</div>
+<!-- 交通 -->
+<div class="p-space-sm rounded-xl hover:bg-surface-container-low transition-all cursor-pointer group">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full" style="background-color: #A8E6CF;"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">交通出行</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">地铁卡、打车</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">¥340.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8%</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full rounded-full transition-all duration-500" style="width: 8%; background-color: #A8E6CF;"></div>
+</div>
+</div>
+<!-- 购物 -->
+<div class="p-space-sm rounded-xl hover:bg-surface-container-low transition-all cursor-pointer group">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full" style="background-color: #A0E7E5;"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">服饰百货</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">季节换装</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">¥256.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">6%</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full rounded-full transition-all duration-500" style="width: 6%; background-color: #A0E7E5;"></div>
+</div>
+</div>
+<!-- 通讯 -->
+<div class="p-space-sm rounded-xl hover:bg-surface-container-low transition-all cursor-pointer group">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full" style="background-color: #FFE9A8;"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold group-hover:text-primary transition-colors">通讯网络</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">手机宽带话费</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">¥174.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4%</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full rounded-full transition-all duration-500" style="width: 4%; background-color: #FFE9A8;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 右栏：支出趋势柱状图与花钱节奏 -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_20px_-2px_rgba(122,95,224,0.05)] flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">当月每日支出趋势与花钱节奏</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">11月节奏追踪</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">柱状代表单日消费，平滑折线代表当月累计开支</p>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm" style="background-color: #AB8FF8;"></span>
+<span class="text-on-surface-variant">已过天数消费</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-surface-container"></span>
+<span class="text-on-surface-variant">未到期占位</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-1 bg-primary rounded-full"></span>
+<span class="text-on-surface-variant">累计支出曲线</span>
+</div>
+</div>
+</div>
+<!-- 趋势综合图表区 (SVG 复合绘制) -->
+<div class="relative w-full h-64 sm:h-72 my-space-sm">
+<svg class="w-full h-full" fill="none" preserveaspectratio="none" viewbox="0 0 700 240">
+<!-- 刻度基准线 -->
+<line stroke="#f3eaff" stroke-dasharray="4 4" stroke-width="1.5" x1="0" x2="700" y1="200" y2="200"></line>
+<line stroke="#f3eaff" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="140" y2="140"></line>
+<line stroke="#f3eaff" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="80" y2="80"></line>
+<line stroke="#f3eaff" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="20" y2="20"></line>
+<!-- 30天柱状图 (1-4天实体高亮，5-30天淡化占位) -->
+<!-- 11-01 (¥1,120) -->
+<rect class="hover:opacity-80 transition-opacity" fill="#AB8FF8" height="90" rx="3" width="12" x="25" y="110"><title>11月1日: ¥1,120</title></rect>
+<!-- 11-02 (¥680) -->
+<rect class="hover:opacity-80 transition-opacity" fill="#AB8FF8" height="55" rx="3" width="12" x="47" y="145"><title>11月2日: ¥680</title></rect>
+<!-- 11-03 (¥1,950 采购大单) -->
+<rect class="hover:opacity-80 transition-opacity" fill="#AB8FF8" height="145" rx="3" width="12" x="69" y="55"><title>11月3日: ¥1,950</title></rect>
+<!-- 11-04 (¥530 今日) -->
+<rect class="hover:opacity-80 transition-opacity" fill="#AB8FF8" height="42" rx="3" width="12" x="91" y="158"><title>11月4日: ¥530</title></rect>
+<!-- 5-30天 浅色占位柱状 -->
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="113" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="135" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="157" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="179" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="201" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="223" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="245" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="267" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="289" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="311" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="333" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="355" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="377" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="399" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="421" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="443" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="465" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="487" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="509" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="531" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="553" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="575" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="597" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="619" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="641" y="185"></rect>
+<rect fill="#f3eaff" height="15" rx="3" width="12" x="663" y="185"></rect>
+<!-- 叠加丝滑累计折线 (#7A5FE0 brand-600) 前4天 -->
+<path d="M 31 160 Q 53 145, 53 135 T 75 80 T 97 65" fill="none" stroke="#7A5FE0" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- 投影渐变面 -->
+<path d="M 31 160 Q 53 145, 53 135 T 75 80 T 97 65 L 97 200 L 31 200 Z" fill="url(#lineGradient)" opacity="0.15"></path>
+<!-- 拐点数据圈 -->
+<circle cx="31" cy="160" fill="#ffffff" r="3.5" stroke="#7A5FE0" stroke-width="2"></circle>
+<circle cx="53" cy="135" fill="#ffffff" r="3.5" stroke="#7A5FE0" stroke-width="2"></circle>
+<circle cx="75" cy="80" fill="#ffffff" r="3.5" stroke="#7A5FE0" stroke-width="2"></circle>
+<circle cx="97" cy="65" fill="#7A5FE0" r="5" stroke="#ffffff" stroke-width="2.5"></circle>
+<defs>
+<lineargradient id="lineGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#7A5FE0"></stop>
+<stop offset="100%" stop-color="#7A5FE0" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- 浮动高亮提示泡 -->
+<div class="absolute left-20 top-2 bg-inverse-surface text-inverse-on-surface px-space-sm py-1 rounded-lg font-label-sm text-label-sm shadow-md pointer-events-none flex items-center gap-1">
+<span>11月4日 累计达 ¥4,280</span>
+</div>
+</div>
+<!-- X 轴日期刻度 -->
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-space-xs">
+<span class="text-primary font-bold">11-01</span>
+<span class="text-primary font-bold">11-04 (今天)</span>
+<span>11-10</span>
+<span>11-15</span>
+<span>11-20</span>
+<span>11-25</span>
+<span>11-30</span>
+</div>
+<!-- 诊断洞察条 -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">insights</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">花钱节奏洞察：11月3日出现单笔高额家居开销，其余 3 天维持日均 ¥210 稳健水平。</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold hover:underline cursor-pointer">设定预警</span>
+</div>
+</div>
+</section>
+<!-- 下方收支月度对比与日历下钻看板 -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- 收支对比分组柱状图 (收入绿色柱 vs 支出粉色柱) -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_20px_-2px_rgba(122,95,224,0.05)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">近半年收支对比与结余厚度</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">绿色为月总收入，粉色为月总支出，间距体现沉淀资金</span>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full" style="background-color: #A8E6CF;"></span>
+<span class="text-on-surface-variant">总收入</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full" style="background-color: #FFB3C0;"></span>
+<span class="text-on-surface-variant">总支出</span>
+</div>
+</div>
+</div>
+<!-- 分组柱状图可视化 -->
+<div class="grid grid-cols-6 gap-space-sm h-52 items-end pt-space-md">
+<!-- 6月 -->
+<div class="flex flex-col items-center gap-2 h-full justify-end group">
+<div class="font-label-sm text-label-sm text-tertiary font-semibold opacity-0 group-hover:opacity-100 transition-opacity">+6.8k</div>
+<div class="flex items-end gap-1.5 h-36">
+<div class="w-3.5 sm:w-4 rounded-t-lg transition-all group-hover:brightness-95" style="height: 75%; background-color: #A8E6CF;" title="6月收入: ¥11,500"></div>
+<div class="w-3.5 sm:w-4 rounded-t-lg transition-all group-hover:brightness-95" style="height: 40%; background-color: #FFB3C0;" title="6月支出: ¥5,200"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">6月</span>
+</div>
+<!-- 7月 -->
+<div class="flex flex-col items-center gap-2 h-full justify-end group">
+<div class="font-label-sm text-label-sm text-tertiary font-semibold opacity-0 group-hover:opacity-100 transition-opacity">+7.1k</div>
+<div class="flex items-end gap-1.5 h-36">
+<div class="w-3.5 sm:w-4 rounded-t-lg transition-all group-hover:brightness-95" style="height: 80%; background-color: #A8E6CF;" title="7月收入: ¥12,000"></div>
+<div class="w-3.5 sm:w-4 rounded-t-lg transition-all group-hover:brightness-95" style="height: 42%; background-color: #FFB3C0;" title="7月支出: ¥5,600"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">7月</span>
+</div>
+<!-- 8月 -->
+<div class="flex flex-col items-center gap-2 h-full justify-end group">
+<div class="font-label-sm text-label-sm text-tertiary font-semibold opacity-0 group-hover:opacity-100 transition-opacity">+5.9k</div>
+<div class="flex items-end gap-1.5 h-36">
+<div class="w-3.5 sm:w-4 rounded-t-lg transition-all group-hover:brightness-95" style="height: 78%; background-color: #A8E6CF;" title="8月收入: ¥11,800"></div>
+<div class="w-3.5 sm:w-4 rounded-t-lg transition-all group-hover:brightness-95" style="height: 52%; background-color: #FFB3C0;" title="8月支出: ¥6,800"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8月</span>
+</div>
+<!-- 9月 -->
+<div class="flex flex-col items-center gap-2 h-full justify-end group">
+<div class="font-label-sm text-label-sm text-tertiary font-semibold opacity-0 group-hover:opacity-100 transition-opacity">+7.4k</div>
+<div class="flex items-end gap-1.5 h-36">
+<div class="w-3.5 sm:w-4 rounded-t-lg transition-all group-hover:brightness-95" style="height: 82%; background-color: #A8E6CF;" title="9月收入: ¥12,200"></div>
+<div class="w-3.5 sm:w-4 rounded-t-lg transition-all group-hover:brightness-95" style="height: 45%; background-color: #FFB3C0;" title="9月支出: ¥5,900"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">9月</span>
+</div>
+<!-- 10月 -->
+<div class="flex flex-col items-center gap-2 h-full justify-end group">
+<div class="font-label-sm text-label-sm text-tertiary font-semibold opacity-0 group-hover:opacity-100 transition-opacity">+8.0k</div>
+<div class="flex items-end gap-1.5 h-36">
+<div class="w-3.5 sm:w-4 rounded-t-lg transition-all group-hover:brightness-95" style="height: 85%; background-color: #A8E6CF;" title="10月收入: ¥12,800"></div>
+<div class="w-3.5 sm:w-4 rounded-t-lg transition-all group-hover:brightness-95" style="height: 43%; background-color: #FFB3C0;" title="10月支出: ¥5,700"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10月</span>
+</div>
+<!-- 11月(当前进行中) -->
+<div class="flex flex-col items-center gap-2 h-full justify-end group bg-surface-container-low/60 rounded-xl p-1">
+<div class="font-label-sm text-label-sm text-primary font-bold">+8.2k</div>
+<div class="flex items-end gap-1.5 h-36">
+<div class="w-3.5 sm:w-4 rounded-t-lg shadow-sm" style="height: 84%; background-color: #A8E6CF;" title="11月收入: ¥12,500"></div>
+<div class="w-3.5 sm:w-4 rounded-t-lg shadow-sm" style="height: 32%; background-color: #FFB3C0;" title="11月支出(当前): ¥4,280"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">11月(今)</span>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>结余最厚月度：10月 (¥8,000+)</span>
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+          现金流持续正向沉淀
+        </span>
+</div>
+</div>
+<!-- 底部每日支出小计日历热力/时间线抽屉 -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-lg rounded-2xl shadow-[0_4px_20px_-2px_rgba(122,95,224,0.05)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">支出日历热力与下钻清单</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">快速洞悉哪天开销密集，悬停直达详细账单</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span>轻微</span>
+<span class="w-2.5 h-2.5 rounded-sm bg-surface-container"></span>
+<span class="w-2.5 h-2.5 rounded-sm" style="background-color: #BBD7FF;"></span>
+<span class="w-2.5 h-2.5 rounded-sm" style="background-color: #AB8FF8;"></span>
+<span class="w-2.5 h-2.5 rounded-sm" style="background-color: #7A5FE0;"></span>
+<span>高额</span>
+</div>
+</div>
+<!-- 热力日历小网格 (以当周及当月前几日为核心) -->
+<div class="grid grid-cols-7 gap-space-xs text-center font-label-sm text-label-sm mb-space-md">
+<span class="text-on-surface-variant py-1">一</span>
+<span class="text-on-surface-variant py-1">二</span>
+<span class="text-on-surface-variant py-1">三</span>
+<span class="text-on-surface-variant py-1">四</span>
+<span class="text-on-surface-variant py-1">五</span>
+<span class="text-on-surface-variant py-1">六</span>
+<span class="text-on-surface-variant py-1">日</span>
+<!-- 日期格子 -->
+<div class="p-2 rounded-xl bg-surface-container-low opacity-40 text-on-surface-variant">27</div>
+<div class="p-2 rounded-xl bg-surface-container-low opacity-40 text-on-surface-variant">28</div>
+<div class="p-2 rounded-xl bg-surface-container-low opacity-40 text-on-surface-variant">29</div>
+<div class="p-2 rounded-xl bg-surface-container-low opacity-40 text-on-surface-variant">30</div>
+<div class="p-2 rounded-xl bg-surface-container-low opacity-40 text-on-surface-variant">31</div>
+<!-- 11月1日 (¥1,120) -->
+<div class="p-2 rounded-xl text-on-surface font-bold hover:scale-105 transition-all cursor-pointer shadow-sm" style="background-color: #AB8FF8;" title="11月1日: ¥1,120 (餐饮采购)">
+<span>1</span>
+<div class="text-[10px] font-normal">¥1.1k</div>
+</div>
+<!-- 11月2日 (¥680) -->
+<div class="p-2 rounded-xl text-on-surface font-bold hover:scale-105 transition-all cursor-pointer shadow-sm" style="background-color: #BBD7FF;" title="11月2日: ¥680">
+<span>2</span>
+<div class="text-[10px] font-normal">¥680</div>
+</div>
+<!-- 11月3日 (¥1,950 最高峰) -->
+<div class="p-2 rounded-xl text-white font-bold hover:scale-105 transition-all cursor-pointer shadow-[0_2px_8px_rgba(122,95,224,0.3)] relative group" style="background-color: #7A5FE0;" title="11月3日峰值: ¥1,950 (家居换季)">
+<span>3</span>
+<div class="text-[10px] font-normal">¥1.9k</div>
+<span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-error"></span>
+</div>
+<!-- 11月4日 (¥530 今日) -->
+<div class="p-2 rounded-xl text-on-surface font-bold hover:scale-105 transition-all cursor-pointer shadow-sm ring-2 ring-primary" style="background-color: #AB8FF8;" title="11月4日 (今天): ¥530">
+<span>4</span>
+<div class="text-[10px] font-normal">¥530</div>
+</div>
+<!-- 后续未到日期 -->
+<div class="p-2 rounded-xl bg-surface-container text-on-surface-variant">5</div>
+<div class="p-2 rounded-xl bg-surface-container text-on-surface-variant">6</div>
+<div class="p-2 rounded-xl bg-surface-container text-on-surface-variant">7</div>
+<div class="p-2 rounded-xl bg-surface-container text-on-surface-variant">8</div>
+<div class="p-2 rounded-xl bg-surface-container text-on-surface-variant">9</div>
+</div>
+<!-- 选中日期下钻快照 (联动 11月3日 峰值花销) -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">11月3日 • 支出峰值明细</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">共 6 笔</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">家居生活用品 ¥1,200、家庭周末聚餐 ¥520、交通加油 ¥230</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">¥1,950.00</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">占当月 45.5%</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div></main></div></body></html>

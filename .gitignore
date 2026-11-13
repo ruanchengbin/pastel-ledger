@@ -1,0 +1,33 @@
+# ===== Node / 后端 =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== uniapp / HBuilderX =====
+unpackage/
+.hbuilderx/
+
+# ===== 构建产物 =====
+dist/
+build/
+coverage/
+
+# ===== 环境变量（含密码/密钥，绝不要提交） =====
+.env
+.env.*
+!.env.example
+
+# ===== IDE / 系统 =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ===== 临时 / 日志 =====
+*.log
+*.tmp
+.temp/
