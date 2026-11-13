@@ -1,16 +1,23 @@
 <script>
-	import { state as store, currentUser, loadData, isLoggedIn, setTheme } from './utils/store.js'
+	import { state as store, currentUser, loadData, isLoggedIn, applyThemeOf } from './utils/store.js'
 
 	export default {
 		onLaunch() {
 			const user = currentUser()
 			if (isLoggedIn() && user) {
 				store.user = user
-				setTheme(user.theme)
+				applyThemeOf(user)
 				loadData()
 			}
 		},
-		onShow() {},
+		onShow() {
+			// 热启动 / 从后台恢复时，重应用当前账号的主题（应对切换账号等场景）
+			const user = currentUser()
+			if (isLoggedIn() && user) {
+				store.user = user
+				applyThemeOf(user)
+			}
+		},
 		onHide() {}
 	}
 </script>
@@ -108,6 +115,27 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+	}
+
+	/* 带头像的 tabBar 页面：头像 + 40rpx 间距 + 标题，全部靠左 */
+	.appbar--with-avatar {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.appbar--with-avatar .appbar-left {
+		flex: 0 0 76rpx;
+		width: 76rpx;
+		height: 76rpx;
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+	}
+
+	.appbar--with-avatar .appbar-center {
+		flex: 1;
+		margin-left: 40rpx;
 	}
 
 	.appbar__title {
@@ -215,9 +243,10 @@
 	}
 
 	.btn--primary {
-		background: var(--brand);
+		background: var(--brand-strong);
 		color: #fff;
 		border-color: transparent;
+		box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.12);
 	}
 
 	.btn--soft {

@@ -21,6 +21,11 @@ export const THEME_META = {
   apricot: { name: '暖杏橙', desc: '温暖柔和', color: '#f0b58c' }
 }
 
+/* 主题按邮箱分仓存储，避免切换账号时沿用前一个账号的主题 */
+function themeKeyFor(email) {
+  return THEME_KEY + '.' + String(email || '').toLowerCase()
+}
+
 /* ------------------------------ 工具 ------------------------------ */
 
 export function pad(n) {
@@ -99,7 +104,8 @@ function uuidv4() {
 
 export const state = reactive({
   user: null,
-  theme: normalizeTheme(read(THEME_KEY, DEFAULT_THEME)),
+  // 初始化时先默认马卡龙紫，saveSession 后会按邮箱读回真正主题
+  theme: DEFAULT_THEME,
   categories: [],
   transactions: [],
   budget: { total: 0, startDay: 1, categories: {} },
@@ -143,7 +149,8 @@ function saveSession(user) {
   })
   write(AUTH_KEY, { email: user.email, at: now })
   state.user = currentUser()
-  setTheme(state.user.theme)
+  // 登录后立刻把「该账号专属的主题」应用上（按邮箱分仓）
+  applyThemeOf(state.user)
 }
 
 export function clearSession() {
@@ -162,7 +169,32 @@ export function clearSession() {
 export function setTheme(name) {
   const theme = normalizeTheme(name)
   state.theme = theme
-  write(THEME_KEY, theme)
+  const user = currentUser()
+  if (user && user.email) {
+    // 主题属于当前账号，按邮箱持久化
+    write(themeKeyFor(user.email), theme)
+    // 同时回写到 USER_KEY，让下次登录时可以快速恢复
+    const current = read(USER_KEY, null) || {}
+    write(USER_KEY, Object.assign({}, current, { theme }))
+    if (state.user) state.user.theme = theme
+  } else {
+    // 未登录时暂存到默认键
+    write(THEME_KEY, theme)
+  }
+  return theme
+}
+
+/**
+ * 把「某个账号对应的主题」应用到全局 state。
+ * 优先取本地为该账号存的主题（setTheme 写入的），
+ * 否则回退到 user 对象里携带的 theme 字段（登录/拉账户信息时来自服务端）。
+ */
+export function applyThemeOf(user) {
+  if (!user || !user.email) return state.theme
+  const overridden = read(themeKeyFor(user.email), null)
+  const fromUser = normalizeTheme(user.theme)
+  const theme = normalizeTheme(overridden || fromUser)
+  state.theme = theme
   return theme
 }
 

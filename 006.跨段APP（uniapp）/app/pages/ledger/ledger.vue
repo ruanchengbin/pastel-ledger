@@ -1,11 +1,13 @@
 <template>
   <view class="page" :class="'theme-' + theme">
-    <view class="appbar">
-      <view class="appbar__title appbar-title">
+    <view class="appbar appbar--with-avatar">
+      <view class="appbar-left">
+        <view class="avatar" @tap="goSettings">{{ avatarLetter }}</view>
+      </view>
+      <view class="appbar__title appbar-title appbar-center">
         <text class="appbar-name">流水</text>
         <text class="appbar__sub appbar-sub">{{ appbarSub }}</text>
       </view>
-      <view class="avatar" @tap="goSettings">{{ avatarLetter }}</view>
     </view>
 
     <view class="container">

@@ -1,11 +1,13 @@
 <template>
   <view class="page" :class="'theme-' + theme">
-    <view class="appbar">
-      <view class="appbar__title appbar-title">
+    <view class="appbar appbar--with-avatar">
+      <view class="appbar-left">
+        <view class="avatar">{{ avatarLetter }}</view>
+      </view>
+      <view class="appbar__title appbar-title appbar-center">
         <text class="appbar-name">设置</text>
         <text class="appbar__sub appbar-sub">账号与偏好</text>
       </view>
-      <view class="avatar">{{ avatarLetter }}</view>
     </view>
 
     <view class="container">
@@ -211,6 +213,7 @@ import {
   updateNameAsync,
   updateThemeAsync,
   setTheme,
+  applyThemeOf,
   logout,
   deleteAccount,
   listLinksAsync,
@@ -317,6 +320,8 @@ export default {
         const user = await fetchMeAsync()
         this.user = user
         this.nameInput = user.name || ''
+        // 每次拉完账户信息，立刻把服务端存的主题应用上（应对切换账号）
+        applyThemeOf(user)
       } catch (err) {
         /* 后端失败时继续使用本地缓存 */
       }
@@ -642,11 +647,14 @@ export default {
     padding: 24rpx;
     border-radius: 24rpx;
     background: var(--surface-2);
-    border: 2rpx solid var(--border);
+    border: 1rpx solid var(--border);
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
-  .theme-card:nth-child(2n) {
-    margin-left: 20rpx;
+  /* 奇数项右间距，偶数项不加水平 margin，保证 50%+50% 能放下 */
+  .theme-card:nth-child(odd) {
+    margin-right: 20rpx;
   }
 
   .theme-card.is-active {

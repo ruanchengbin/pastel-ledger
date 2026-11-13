@@ -52,26 +52,38 @@
 		}
 	],
 	"tabBar": {
-		"color": "#8b849d",
-		"selectedColor": "#6e56b8",
+		"color": "#8a8a8a",
+		"selectedColor": "#2c6a9e",
 		"backgroundColor": "#ffffff",
 		"borderStyle": "white",
 		"list": [
 			{
 				"pagePath": "pages/ledger/ledger",
-				"text": "流水"
+				"text": "流水",
+				"selectedFontWeight": "bold",
+				"iconPath": "static/ledger.png",
+				"selectedIconPath": "static/ledger-current.png"
 			},
 			{
 				"pagePath": "pages/stats/stats",
-				"text": "统计"
+				"text": "统计",
+				"selectedFontWeight": "bold",
+				"iconPath": "static/stats.png",
+				"selectedIconPath": "static/stats-current.png"
 			},
 			{
 				"pagePath": "pages/budget/budget",
-				"text": "预算"
+				"text": "预算",
+				"selectedFontWeight": "bold",
+				"iconPath": "static/budget.png",
+				"selectedIconPath": "static/budget-current.png"
 			},
 			{
 				"pagePath": "pages/settings/settings",
-				"text": "设置"
+				"text": "设置",
+				"selectedFontWeight": "bold",
+				"iconPath": "static/settings.png",
+				"selectedIconPath": "static/settings-current.png"
 			}
 		]
 	},
